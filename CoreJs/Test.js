@@ -1,23 +1,36 @@
-//Hoisting : 
+// UnTyped 
 
-// Hoisting the process of creating a snap shot of all the variables and functions present in javascript file/module
-//var myName = undefined; : Hoisted
-//var myname = "Cyprian";
-console.log(myName); //variable hoisting : variable is hoisted with default value "undefined" at the top of the function
-name("Brian"); // function hoisting : functions get hoisted at the top with its definition so we can exceute even before defining it
+//var unTypedVariable = "Cyprian";//string
+//var unTypedVariable = 0.53622;//decimal
+//var unTypedVariable = new Date();//date time
+//var unTypedVariable = 998989989;//integer
+//console.log(unTypedVariable); 
 
-var myName = "Alleen"; //initialization of an identifier
+//Dynamic Typing : undefined, string, number, null, object
 
-//var myname = "Cyprian";
+console.log(dynamicTypedVariable); //undefined : its a valid data type in js
+console.log(typeof dynamicTypedVariable);
 
-function name(params) { //defining a function 
-    console.log("Your name is :- 1", params);
+var dynamicTypedVariable = "Cyprian";//string
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
 
-    //Hoisting for the inner variables and functions be limited to each function
-    
-    name2(myname);
-    function name2(myName2) { //defining a function 
-        console.log("Your name is :- 2", myName2);  
-    }
-}
-name(myName);
+dynamicTypedVariable = 0.53622;//decimal : data type - number
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
+
+dynamicTypedVariable = new Date();//date time : data type - object
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
+
+dynamicTypedVariable = 998989989;//integer : data type - number
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
+
+dynamicTypedVariable = null;//null : data type - object
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
+
+dynamicTypedVariable = {};//object : data type - object  //new Object()
+console.log(dynamicTypedVariable); 
+console.log(typeof dynamicTypedVariable);
