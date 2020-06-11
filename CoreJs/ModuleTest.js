@@ -23,4 +23,16 @@ var ConstFuncObj = function (name, age) { // as functions are first class member
 
 var Employee = new ConstFuncObj("Alleen", 19); //Employee object from constructor function
 
-module.exports = Employee;
+
+
+module.exports = {
+    User,
+    Student,
+    Employee
+};
+
+
+//user3 = Object.create(user2); //creates an object with prototype chain
+
+//var user3 = Object.create(null); //to break the prototype chain or stop inheritance we use null
+//Object.assign(user3, user2);
