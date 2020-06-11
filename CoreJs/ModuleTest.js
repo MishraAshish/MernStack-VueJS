@@ -4,7 +4,7 @@
 var User = {
     Name: "Brian",
     Age : 18,
-    address : {
+    Address : {
         Line1 : "Line1",
         Line2 : "Line2"
     },
@@ -15,16 +15,34 @@ var User = {
 //module.exports = User;
 
 // Creating and Object with Object contructor
+//Example of Inheritance
+//Using User Class and creating student object with new implementations
 var Student = new Object(User);
+Student.Name = "Dennis";
+Student.Bio = "Blah Blah Blah";
+Student.GetName = function () { //Overriding the GetName from User with additional return
+    return {
+        Bio: this.Bio,
+        Name: this.Name
+    }
+}
+Student.GetAddress = function () { //Overriding the GetName from User with additional return
+    return this.Address
+}
+
+
 //module.exports = Student;
 
 // Creating object with constructor function //Legacy way of creating object, important for interviews
 var ConstFuncObj = function (name, age) { // as functions are first class members of js
     this.Name = name,
-    this.Age = age   
+    this.Age = age,
+    this.GetName = function () {
+        return this.Name;
+    }
 }
 
-var Employee = new ConstFuncObj("Alleen", 19); //Employee object from constructor function
+var Employee = new ConstFuncObj("Alleen", 19); //Initial Employee object from constructor function
 
 
 
