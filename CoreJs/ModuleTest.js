@@ -7,6 +7,9 @@ var User = {
     address : {
         Line1 : "Line1",
         Line2 : "Line2"
+    },
+    GetName : function () {
+        return this.Name;
     }
 }
 //module.exports = User;
