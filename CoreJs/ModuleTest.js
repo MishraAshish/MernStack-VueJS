@@ -15,15 +15,12 @@ var User = {
 var Student = new Object(User);
 //module.exports = Student;
 
-// Creating object with constructor function //Legacy way of creating object
-
+// Creating object with constructor function //Legacy way of creating object, important for interviews
 var ConstFuncObj = function (name, age) { // as functions are first class members of js
     this.Name = name,
     this.Age = age   
 }
 
 var Employee = new ConstFuncObj("Alleen", 19); //Employee object from constructor function
-
-module.exports = Employee;
 
 module.exports = Employee;
