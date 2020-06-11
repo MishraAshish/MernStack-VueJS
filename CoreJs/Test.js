@@ -1,24 +1,5 @@
-//Commenting in javascript
+//Test : Module - is a javascript file in general
 
-// ctrl+k+c - to comment
-// ctrl+k+u - to un-comment
+var userObj = require("./ModuleTest"); // we are importing js file here so that we can you
 
-//- single line comment - 
-
-/*
-Multiline comment
-
-var mybool = true;
-or operator ( || )
-if (mybool || mybool === 1) {
-    console.log("Or Operator True (if)");
-} else {
-    console.log("Or Operator False (else)");
-}
-*/
-
-
-//each line ends on semicolon ; - but its optional
-
-console.log("Test Me")
-console.log("Test Me");
+console.log("User ", userObj);
