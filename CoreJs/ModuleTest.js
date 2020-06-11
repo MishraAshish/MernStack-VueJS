@@ -17,7 +17,10 @@ var User = {
 // Creating and Object with Object contructor
 //Example of Inheritance
 //Using User Class and creating student object with new implementations
-var Student = new Object(User);
+
+//var Student = new Object(User); // Drawback is it copies parent object so will change the parent as well
+var Student = Object.create(User); // Accepts object that needs to be inherited without copying so new and better way to implement inheritance
+
 Student.Name = "Dennis";
 Student.Bio = "Blah Blah Blah";
 Student.GetName = function () { //Overriding the GetName from User with additional return
@@ -43,7 +46,10 @@ var ConstFuncObj = function (name, age) { // as functions are first class member
 }
 
 var Employee = new ConstFuncObj("Alleen", 19); //Initial Employee object from constructor function
-
+Employee.Bio = "Asdasd";
+Employee.GetAddress = function (params) {
+    return "New Line Address"
+}
 
 
 module.exports = {
