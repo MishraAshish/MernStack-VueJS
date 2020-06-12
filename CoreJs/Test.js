@@ -1,30 +1,20 @@
-//Object - in a little more detail
+// Functions - Superior of anything in js
 
-var User = {
-    Name: "Brian",
-    Age : 18,
-    Address : {
-        Line1 : "Line1",
-        Line2 : "Line2"
-    },
-    GetName : function () {
-        return this.Name;
-    }
+//console.log(sum) // undefined : as function expression hoisted with undfined unlike functions which are hoisted with definition
+//console.log(sum(5,6)) //error : as undefined can't be executed
+
+function name(param1, param2, param3) {
+    //body
+    console.log("This is MERNStack")
+}
+name() //invocation
+
+// Function expression 
+var sum = function (x, y) {
+    return x+y;
 }
 
-var User2 = {
-    Name: "Dennis",
-    Activity : "in lockdown",
-}
-
-// User2 - Target , User - Source which copies all its values even common ones
-var User3 = Object.assign(User);
-
-console.log("User 3", User3);
-console.log("User 2", User2);
-console.log("User ", User);
-
-
-//If You need to stop prototype chain
-
-var NoProtoObj = Object.create(null);//this removes protoype chain of copied object which is null
+console.log(sum(2,2))
+console.log(sum(2)) //y = undefined , NaN : Not a Number
+console.log(sum(2,3,4)) // 4:  ignored
+console.log(sum()) //x,y = undefined , NaN : Not a Number
