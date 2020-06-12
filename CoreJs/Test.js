@@ -1,44 +1,41 @@
-// Functions - Superior of anything in js
+//Scope, Context and Call, Apply and Bind
 
-//console.log(sum) // undefined : as function expression hoisted with undfined unlike functions which are hoisted with definition
-//console.log(sum(5,6)) //error : as undefined can't be executed
+var person = {name: 'Marvin', age: 42, size: '2xM'};
+//name = "Cyprian"; //global variable
+var person1 = {name: 'Dennis', age: 21, size: '1xM'};
 
-function name(param1, param2, param3) {
-    //body
-    console.log("This is MERNStack")
-}
-//name() //invocation
-//console.log(sum(2,3,4));
-// Function expression 
-// var sum = function (x, y) {
-//     console.log("Function Expression");
-//     return x+y;
-// }
+var sayHello = function(bio)
+{
+    console.log('Hello, ' + this.name);
+    console.log('Age , ' + this.age);
 
-// console.log(sum(2,2))
-// console.log(sum(2)) //y = undefined , NaN : Not a Number
-// console.log(sum(2,3,4)) // 4:  ignored
-// console.log(sum()) //x,y = undefined , NaN : Not a Number
+    console.log('Bio , ' + bio);
+};
 
-// Function Overwriting no concept of overloading in javascript
-console.log(sum())
+var sayGoodbye = function(param1, param2, param3)
+{
+    console.log('Goodbye, ' + this.name);
+    console.log('Size , ' + this.size);
+};
 
-function sum() {
-    console.log("Function No Param");
-    return 20;
-}
+//sayHello();
+//sayGoodbye();
 
-function sum(x,y,z) {
-    console.log("Function 1");
-    return x+y+z
-}
+sayHello.call(person, "MernStack Trainer"); //call allows us to change the context (execution context at runtime)
+//sayGoodbye.call(person);
+sayGoodbye.call(person1);
 
-console.log(sum(2,3,4));
+//apply : is used to change the context at runtime like call but has the capablity to pass parameters in the form of array
+// is widely to create delegates
 
-function sum(x) {
-    console.log("Function 2");
-    return x;
-}
+var sayHelloForApply = function(addres1, address2, address3)
+{
+    console.log('Hello, ' + this.name);
+    console.log('Age , ' + this.age);
 
-console.log(sum(2,3,4));
+    console.log('Address from Apply - ' + addres1);
+    console.log('Address from Apply - ' + address2);
+    console.log('Address from Apply - ' + address3);
+};
 
+sayHelloForApply.apply(person1, ["addres1 -sada", "address2 - dsada", "address3 -asdasda"]);
