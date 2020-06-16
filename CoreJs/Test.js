@@ -1,19 +1,23 @@
-//Scope, Context and Call, Apply and => Bind
+//Closures - implementation of Encapsulation : Nested function where child function is returned by parent 
+// and exposes some of the elements of parent function to the outer world.
 
-// bind :  Will keep holding the context and will not run immediately but supply the context when event is invoked
-var user = {
-    id: 42,
-    printId: function() { 
-        
-        setTimeout(
-            function() { // a function as a callback to settimeout
-                console.log("User Id is : ", this.id);
-            }.bind(this), //keeps attached the context for the time till your event executes
-                2000 //milli seconds
-            );
 
-        //console.log("User Id is : ", this.id);
+function closureOuter(name, age) {
+    var amount = "200"; //public member
+    var price = "25"; //public member
+    var password = "abcde"; //private members
+
+    return function closureInner(currency) {
+        return {
+            "amount": amount,
+            "name" : name,
+            "curreny" : currency,
+            "price" : price + currency            
+        }
     }
-   };
 
-user.printId();
+}
+
+var closureFunc = closureOuter("Cyprian", 15); //invoking the outer function
+
+console.log(closureFunc(" $ Dollar")); // invoking and printing the closure values, where inner function keeps hold of parent variables
