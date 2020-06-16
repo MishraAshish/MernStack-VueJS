@@ -1,23 +1,23 @@
-//Closures - implementation of Encapsulation : Nested function where child function is returned by parent 
-// and exposes some of the elements of parent function to the outer world.
 
+console.log("outer first");
 
-function closureOuter(name, age) {
-    var amount = "200"; //public member
-    var price = "25"; //public member
-    var password = "abcde"; //private members
+setTimeout(function(){
+    console.log("first timeout");
+    setTimeout(function(){
+        console.log("inner timeout");
+    },0);	
+},1000);
 
-    return function closureInner(currency) {
-        return {
-            "amount": amount,
-            "name" : name,
-            "curreny" : currency,
-            "price" : price + currency            
-        }
-    }
+setTimeout(function(){
+    console.log("second timeout");
+},1000);
 
-}
+setTimeout(function(){
+    console.log("third timeout");
+},2000);
 
-var closureFunc = closureOuter("Cyprian", 15); //invoking the outer function
+setTimeout(function(){
+    console.log("fourth timeout");
+},1000);
 
-console.log(closureFunc(" $ Dollar")); // invoking and printing the closure values, where inner function keeps hold of parent variables
+console.log("outer second");
