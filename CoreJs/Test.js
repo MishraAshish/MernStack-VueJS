@@ -1,18 +1,27 @@
-//Ques : 
+//lexical scope : { //lexical // } //let and const
 
-//- Present an example for Encapsulation in javascript
-//- Present an example for Inheritance in javascript
-//- Write a function display UserDetails, where it gets the details printed from the User Object setup with the help of call and apply
+{
+  // console.log(functionScope)
+  // console.log(lexicalScope);
+  // console.log(lexicalScopeConst)
+  
+  var functionScope = "hoisting allowed";
 
-//- Solve below function with the help of bind
-	var hero = {
-		_name: 'John Doe',
-		getSecretIdentity: function (){
-			setTimeout(function(){
-				console.log(this._name);
-			}, 1000);
-			
-		}
-	};
+  var functionScope = 36616;
 
-	hero.getSecretIdentity()
+  let lexicalScope;
+  
+  lexicalScope = 98989898;
+
+  lexicalScope = "asdasdas";
+
+  //let lexicalScope = "test test"; // values can be updated as many times but cant be redeclared
+
+  const lexicalScopeConst = "sadsa"; //as soon as you define we need to declare and can't be redefined
+
+  // lexicalScopeConst = "asdasd";
+}
+
+// console.log(functionScope)
+// console.log(lexicalScope);
+// console.log(lexicalScopeConst)
