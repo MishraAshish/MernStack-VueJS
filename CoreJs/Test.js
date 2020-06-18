@@ -1,32 +1,56 @@
-// spread syntax // spread operator
+// Destructuring : 
+// Array Destructuring and Object Destructuring
 
-function sum(val1 = 1, val2 = 10, val3) { //default parameter
-  
-    return val1+val2+val3;
+let foo = ['one', 'two', 'three', 'four']; 
+let [one, two, three, four = "four default"] = foo; //default
+console.log(one); // "one" 
+console.log(two); // "two" 
+console.log(three); // "three"
+console.log(four); // undefined
 
-}
+//swap the values
+let a = 1, b = 3;
 
-let arrNum = [6,7,8];
+[a, b] = [b, a]; 
+console.log(a); // 3 
+console.log(b); // 1
+
+//assignemnt separate of declaration
+let c, d;
+[c, d] = [21, 22]; 
+console.log(c); // 3 
+console.log(d); // 1
+
+//assignemnt of rest of the array (spread)
+let e, f;
+[e, ...f] = [21, 22, 23, 24, 25, 26]; 
+//[...e, f] = [21, 22, 23, 24, 25, 26];//spread and rest should be the last whereever used
+console.log(e); // 3 
+console.log(f); // 1
 
 
-//console.log(sum(arrNum[0],arrNum[1],arrNum[2]));
-console.log(sum(...arrNum));
+//Object Destructuring
 
-console.log(sum.apply(null,arrNum)); //use of apply was done when we didn't hade spread operator, null- as we dont have any object in sum to show values
+const student = {
+  firstname: 'Glad',
+  lastname: 'Dennis',
+  country: 'Nigeria'
+};
 
+// Object Destructuring
+const { firstname, lastname, country } = student;
+console.log(firstname, lastname, country); // Glad Chinda Nigeria
 
-//Rest Parameters : are used to recive the parameters as array in function (...array)
+//nested object destructuring
+const student1 = {
+  name: 'John Doe',
+  age: 16,
+  scores: {
+      maths: 74,
+      english: 63
+  }
+};
 
-function sumRest(...restParams) {
-  
-  return restParams.reduce((last, current)=>{
-      return last + current
-    });
+const {name, scores: {maths}} = student1;
 
-}
-
-let arrSpread = [6,7,8];
-console.log(sumRest(...arrSpread));
-
-let arrSpr = [1,2,4,3,5,6,7,8,0,4,35,543,5435,45344,54543545,345,345,3453454,534534,5345,3453];
-console.log(sumRest(...arrSpr));
+console.log(name, maths); // Glad Chinda Nigeria
