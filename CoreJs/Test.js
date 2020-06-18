@@ -1,38 +1,13 @@
-// ForIn and ForOF loop
+// default parameters :
 
-//for in loop  
-let person = {
-  fname:"John", 
-  lname:"Doe", 
-  //lname:"asdas", 
-  age:25,
-  address : {line1: "", line2: ""}
-};  
-
-for (const key in person) {
-  //if (person.hasOwnProperty(key)) { //check validation
-    const element = person[key];
-    console.log("Current Item : ", element)
-  //}
-}
-
-var arr = [3, 5, 7, "MyVal"];
-arr.myVal = "Hello";
-
-for (let i of arr) {
-  console.log(i); 
-  // logs “3”, “5”, “7”
-  //it is does not log “3”, “5”, “7”,”hello”
+function multiply(val1 = 1, val2 = 10) { //default parameter
+  
+    return val1*val2;
 
 }
 
+console.log(multiply(2,3));
 
-//for of loop  
- 
-let cars = ['BMW', 'Volvo', 'Mini'];
+console.log(multiply(2));
 
-for (const iterator of cars) {
-    console.log("Current Item For Of:",iterator)
-}
-
-
+console.log(multiply());
