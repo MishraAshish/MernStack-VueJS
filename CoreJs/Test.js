@@ -1,23 +1,18 @@
+//Ques : 
 
-console.log("outer first");
+//- Present an example for Encapsulation in javascript
+//- Present an example for Inheritance in javascript
+//- Write a function display UserDetails, where it gets the details printed from the User Object setup with the help of call and apply
 
-setTimeout(function(){
-    console.log("first timeout");
-    setTimeout(function(){
-        console.log("inner timeout");
-    },0);	
-},1000);
+//- Solve below function with the help of bind
+	var hero = {
+		_name: 'John Doe',
+		getSecretIdentity: function (){
+			setTimeout(function(){
+				console.log(this._name);
+			}, 1000);
+			
+		}
+	};
 
-setTimeout(function(){
-    console.log("second timeout");
-},1000);
-
-setTimeout(function(){
-    console.log("third timeout");
-},2000);
-
-setTimeout(function(){
-    console.log("fourth timeout");
-},1000);
-
-console.log("outer second");
+	hero.getSecretIdentity()
