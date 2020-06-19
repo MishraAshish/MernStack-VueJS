@@ -1,28 +1,15 @@
-const arr = [10, 12, 15, 21];
+//Template Literals :- ``
 
-console.log(i); // undefined
+let a = 5, b = 10;
 
-for (var i = 0; i < arr.length; i++) {
- 
-  // setTimeout(function(i_local) {
-  //   return function() {
-  //     console.log('The index of this number is: ' + i_local);
-  //   }
-  // }(i), 1000);
+console.log("This value is greater than "+a+" and  "+b +
+"This value is greater than "+a+" and  "+b+
+"This value is greater than "+a+" and  "+b+
+"This value is greater than "+a+" and  "+b+
+"This value is greater than "+a+" and  "+b);
 
-    setTimeout(function() {
-		    console.log('Index: ' + i + ', element: ' + arr[i]);
-    }, 1000);
-    
-}
-
-console.log(i);
-
-
-for (let j = 0; j < arr.length; j++) {
- 
-    setTimeout(function() {
-		    console.log('Index: ' + j + ', element: ' + arr[j]);
-    }, 1000);
-    
-}
+console.log(`This value is greater than ${a} and ${b}
+This value is greater than ${a} and ${b}
+This value is greater than ${a} and ${b}
+This value is greater than ${a} and ${b}
+This value is greater than ${a} and ${b}`);
