@@ -1,15 +1,23 @@
-//Template Literals :- ``
+//Classes :
 
-let a = 5, b = 10;
 
-console.log("This value is greater than "+a+" and  "+b +
-"This value is greater than "+a+" and  "+b+
-"This value is greater than "+a+" and  "+b+
-"This value is greater than "+a+" and  "+b+
-"This value is greater than "+a+" and  "+b);
+class Rectangle { 
+  
+  constructor(height, width) { 
+      this.height = height; 
+      this.width = width; 
+  } 
 
-console.log(`This value is greater than ${a} and ${b}
-This value is greater than ${a} and ${b}
-This value is greater than ${a} and ${b}
-This value is greater than ${a} and ${b}
-This value is greater than ${a} and ${b}`);
+  calculateArea(){
+    console.log(this.height * this.width);
+
+  }
+
+}
+
+let clsObj = new Rectangle(5, 6);
+
+console.log(clsObj.height)
+console.log(clsObj.width)
+
+clsObj.calculateArea();
