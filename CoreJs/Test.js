@@ -1,24 +1,28 @@
-// ShortHand of key value pair if the key and variable name is same
+const arr = [10, 12, 15, 21];
 
-//let cat = 'Miaow', dog = 'Woof',bird = 'Peet peet';
-let cat = 'Miaow';
-let dog = 'Woof';
-let bird = 'Peet peet';
+console.log(i); // undefined
 
-//ES-5 ways
-let animals = {
-  cat: cat,
-  dog: dog,
-  bird: bird
+for (var i = 0; i < arr.length; i++) {
+ 
+  // setTimeout(function(i_local) {
+  //   return function() {
+  //     console.log('The index of this number is: ' + i_local);
+  //   }
+  // }(i), 1000);
+
+    setTimeout(function() {
+		    console.log('Index: ' + i + ', element: ' + arr[i]);
+    }, 1000);
+    
 }
 
-//ES-6 use just short hand to print values by just putting key of same name
-let animalsES6 = {
-  cat,
-  dog,
-  bird,
-  //lion: "Lion Name"
-}
+console.log(i);
 
-console.log(animals);
-console.log(animalsES6);
+
+for (let j = 0; j < arr.length; j++) {
+ 
+    setTimeout(function() {
+		    console.log('Index: ' + j + ', element: ' + arr[j]);
+    }, 1000);
+    
+}
