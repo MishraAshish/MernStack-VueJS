@@ -2,7 +2,7 @@
 
 // This is the literals way of creating an object
 var User = {
-    Name: "Brian",
+    Name: "Blaz",
     Age : 18,
     Address : {
         Line1 : "Line1",
@@ -12,7 +12,15 @@ var User = {
         return this.Name;
     }
 }
-//module.exports = User;
+
+module.exports = User;
+
+
+
+
+
+
+
 
 // Creating and Object with Object contructor
 //Example of Inheritance
@@ -52,11 +60,11 @@ Employee.GetAddress = function (params) {
 }
 
 
-module.exports = {
-    User,
-    Student,
-    Employee
-};
+// module.exports = {
+//     User,
+//     Student,
+//     Employee
+// };
 
 
 //user3 = Object.create(user2); //creates an object with prototype chain
