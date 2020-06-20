@@ -1,57 +1,24 @@
-// basic
+// Operators :
+// or (||), and (&&), equalto (==), less than(<), greater than(>) ....
 
-/*
-//case sensitive
-var name = "blaz"
-console.log(name) //; semicolons are optional
+//double and triple (equalto (===), less than equalto (<==)) ...
 
-var Name = "cyprian"
-console.log(Name)   ctrl+ k+c - commenting , ctrl+k+u - uncommenting*/
+var myVal = true;
 
+if (myVal && myVal === 1) { //triple equal to - compare value as well as type
+  console.log("Print MyVal True Case");  
+} else {
+  console.log("Print MyVal False Case");
+}
 
-//dynamic typing
-var dynamic = "vaccines"
+if (myVal && myVal == 1) {
+  console.log("Print MyVal True Case");  
+} else {
+  console.log("Print MyVal False Case");
+}
 
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = new Date();
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = 2021;
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = 20.21;
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = true;
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = {};
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-
-dynamic = {name: "My Name"};
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = undefined
-
-console.log(dynamic);
-console.log(typeof dynamic);
-
-dynamic = null
-
-console.log(dynamic); //important interview question
-console.log(typeof dynamic);
+if (myVal || myVal == 1) {
+  console.log("Print MyVal True Case");  
+} else {
+  console.log("Print MyVal False Case");
+}
