@@ -13,20 +13,14 @@ var User = {
     }
 }
 
-module.exports = User;
-
-
-
-
-
-
-
+//module.exports = User;
 
 // Creating and Object with Object contructor
 //Example of Inheritance
 //Using User Class and creating student object with new implementations
 
-//var Student = new Object(User); // Drawback is it copies parent object so will change the parent as well
+//var Student1 = new Object(User); // Drawback is it copies parent object so will change the parent as well
+
 var Student = Object.create(User); // Accepts object that needs to be inherited without copying so new and better way to implement inheritance
 
 Student.Name = "Dennis";
@@ -42,7 +36,10 @@ Student.GetAddress = function () { //Overriding the GetName from User with addit
 }
 
 
-//module.exports = Student;
+console.log( Student);
+console.log( Student.GetName());
+console.log( Student.GetAddress());
+
 
 // Creating object with constructor function //Legacy way of creating object, important for interviews
 var ConstFuncObj = function (name, age) { // as functions are first class members of js
@@ -53,21 +50,15 @@ var ConstFuncObj = function (name, age) { // as functions are first class member
     }
 }
 
-var Employee = new ConstFuncObj("Alleen", 19); //Initial Employee object from constructor function
-Employee.Bio = "Asdasd";
+var Employee = new ConstFuncObj("Blaz", 21); //Initial Employee object from constructor function
+Employee.Bio = "Auto Bio";
 Employee.GetAddress = function (params) {
     return "New Line Address"
 }
 
-
-// module.exports = {
-//     User,
-//     Student,
-//     Employee
-// };
+console.log( Employee);
+console.log( Employee.GetName());
+console.log( Employee.GetAddress());
 
 
-//user3 = Object.create(user2); //creates an object with prototype chain
 
-//var user3 = Object.create(null); //to break the prototype chain or stop inheritance we use null
-//Object.assign(user3, user2);
