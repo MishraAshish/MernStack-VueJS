@@ -1,29 +1,57 @@
-// Hoisting (Compiled and Interpreter)
+// basic
 
-console.log(hoistedVar); //variable hoisting - with undefined value as default
+/*
+//case sensitive
+var name = "blaz"
+console.log(name) //; semicolons are optional
 
-console.log(name()); // function gets hoisted with its definition so that it can be executed
-
-var hoistedVar = "2020"; 
-
-function name(params) {
-  console.log("Blaz");
-  return "Cyprian"
-}
+var Name = "cyprian"
+console.log(Name)   ctrl+ k+c - commenting , ctrl+k+u - uncommenting*/
 
 
-//function expression
-// var name = function (params, param2) {
-//   console.log("Covid-19");
-//   return "Coronavirus"
-// }
+//dynamic typing
+var dynamic = "vaccines"
 
-console.log(name());
+console.log(dynamic);
+console.log(typeof dynamic);
 
-// overwriting : functions over write all the previous function definitions except (funciton expression)
-function name(params, param1) { // over loading doesn't exists in js
-  console.log("Blaz 2");
-  return "Cyprian 2"
-}
+dynamic = new Date();
 
-console.log(name());
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = 2021;
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = 20.21;
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = true;
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = {};
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+
+dynamic = {name: "My Name"};
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = undefined
+
+console.log(dynamic);
+console.log(typeof dynamic);
+
+dynamic = null
+
+console.log(dynamic); //important interview question
+console.log(typeof dynamic);
