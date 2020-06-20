@@ -1,6 +1,18 @@
+//Functions :
+// Function CallBacks :
+var hisName = "hisname";
 
-var userObj = require("./ModuleTest")
+function name(params) {
+  console.log(hisName);
+  return params;
+}
 
-console.log(userObj);
 
-console.log(userObj.GetName())
+function print(callBackFunc, param) { //Functions can be passed as parameter - callBack Func
+    console.log(callBackFunc(param))
+}
+
+
+print(name, "Blaz Demsar");
+
+print(name, "Cyprian");
