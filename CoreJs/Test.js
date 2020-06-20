@@ -1,23 +1,29 @@
-//Classes :
+// Hoisting (Compiled and Interpreter)
 
+console.log(hoistedVar); //variable hoisting - with undefined value as default
 
-class Rectangle { 
-  
-  constructor(height, width) { 
-      this.height = height; 
-      this.width = width; 
-  } 
+console.log(name()); // function gets hoisted with its definition so that it can be executed
 
-  calculateArea(){
-    console.log(this.height * this.width);
+var hoistedVar = "2020"; 
 
-  }
-
+function name(params) {
+  console.log("Blaz");
+  return "Cyprian"
 }
 
-let clsObj = new Rectangle(5, 6);
 
-console.log(clsObj.height)
-console.log(clsObj.width)
+//function expression
+// var name = function (params, param2) {
+//   console.log("Covid-19");
+//   return "Coronavirus"
+// }
 
-clsObj.calculateArea();
+console.log(name());
+
+// overwriting : functions over write all the previous function definitions except (funciton expression)
+function name(params, param1) { // over loading doesn't exists in js
+  console.log("Blaz 2");
+  return "Cyprian 2"
+}
+
+console.log(name());
