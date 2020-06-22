@@ -1,33 +1,28 @@
-//Two new collections : Map and Set
+// Promises : 
 
-let myMap = new Map();
+let promise1 = new Promise(function(resolve, reject)
+ {  
+    // setTimeout(function() {   //async callback               
+    //     resolve({
+    //         "status":200,
+    //         "success":"We are resolved",
+    //         "job":"laptop has been delivered"
+    //     });
+    // }, 3000);
 
-let keyString = 'a string', keyObj = {}, keyFunc = function() {};
+    setTimeout(function() {   //async callback               
+      reject({
+          "status":400,
+          "rejected":"We are rejecting our promise",
+          "job":"no more laptops"
+      });
+  }, 3000);
+});
 
-let userObj = {
-  name:"Alleen",
-  age: 21
-} 
-
-let userObjDetails = {
-  name:"Alleen",
-  age: 21,
-  adress:{
-      add:"line1",
-      add:"line2"
-  },
-  bio: "asdas",
-  asda:"ASdas"
-} 
-// setting the values 
-myMap.set(keyString, "value associated with 'a string'"); 
-myMap.set(keyObj, 'value associated with keyObj'); 
-myMap.set(keyFunc, 'value associated with keyFunction'); 
-
-myMap.set(userObj, userObjDetails);
-
-//console.log(myMap.values());
-
-console.log(myMap.has(userObj))
-
-console.log(myMap.get(userObj))
+promise1.then(function(value) {  
+        console.log(value);  // expected output: success object/ resolved
+}).catch(function(value) {  
+        console.log(value);  // expected output: rejected object
+});
+         
+console.log(promise1);// expected output: [object Promise]
