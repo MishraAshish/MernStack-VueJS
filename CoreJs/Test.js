@@ -1,17 +1,32 @@
 // Arrow Functions : Fat arrow functions 
-//1.  Short hand to write functions
+//2. Resolving the context 
 
-let name = (param)=>console.log(param);
-name("God")
+let userDetails = {
+    userid : 2021,
 
-let sum = (a,b) => a+b;
-console.log(sum(8,5))
+    printUserId : function() {
+        console.log("UserID Before:", this.userid); //2021 //this : is context of printUserId which is userDetails
+
+        // setTimeout(function () {
+        //     console.log("UserID :", this.userid); // undefined as context (this), is global that instead of userDetails
+        // }, 3000);
+
+        setTimeout(function () {
+          console.log("UserID :", this.userid); // using bind we set the context back to userDetails so the output
+        }.bind(this), 3000);
 
 
-let big = (a,b,c) => {
-            let d= a+b;
-            return d*c
-          }
+        let _this = this;
+        setTimeout(function () {
+          console.log("UserID :", _this.userid); // printing the userid from parents context
+        }, 3000);
 
-console.log(big(8,5,10))
-//write an arrow function accepts three parameters it will add first add first two and then divide by third param
+
+        //resolving through arrow function
+        setTimeout(() => {
+          console.log("UserID Arrow :", this.userid); // it copies the immediate parent functions context to resolve "this"
+        }, 3000);
+    }
+}
+
+userDetails.printUserId();
