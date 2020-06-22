@@ -1,32 +1,43 @@
-// Arrow Functions : Fat arrow functions 
-//2. Resolving the context 
+//Two new collections : Map and Set
 
-let userDetails = {
-    userid : 2021,
+let myMap = new Map();
 
-    printUserId : function() {
-        console.log("UserID Before:", this.userid); //2021 //this : is context of printUserId which is userDetails
+let keyString = 'a string', keyObj = {}, keyFunc = function() {};
 
-        // setTimeout(function () {
-        //     console.log("UserID :", this.userid); // undefined as context (this), is global that instead of userDetails
-        // }, 3000);
+// setting the values 
+myMap.set(keyString, "value associated with 'a string'"); 
+myMap.set(keyObj, 'value associated with keyObj'); 
+myMap.set(keyFunc, 'value associated with keyFunction'); 
 
-        setTimeout(function () {
-          console.log("UserID :", this.userid); // using bind we set the context back to userDetails so the output
-        }.bind(this), 3000);
+console.log(myMap.size);
+
+console.log(myMap.get('a string'))
+
+console.log(myMap.delete(keyObj))
+console.log(myMap.size);
+
+console.log(myMap.delete(keyObj))
+console.log(myMap.size);
+
+myMap.set("session","MERNSTack Session")
+
+console.log(myMap.values());
+
+//Sets 
+
+const set1  = new Set([1, 2, 3, 4, 5]);
+
+console.log(set1.has(1));
+// expected output: true
+
+console.log(set1.has(5));
+// expected output: true
+
+console.log(set1.has(6));
+// expected output: false
 
 
-        let _this = this;
-        setTimeout(function () {
-          console.log("UserID :", _this.userid); // printing the userid from parents context
-        }, 3000);
+const set2  = new Set(["Test", "Test2", 3, 4, 5]);
 
-
-        //resolving through arrow function
-        setTimeout(() => {
-          console.log("UserID Arrow :", this.userid); // it copies the immediate parent functions context to resolve "this"
-        }, 3000);
-    }
-}
-
-userDetails.printUserId();
+console.log(set2.values());
+// expected output: true
