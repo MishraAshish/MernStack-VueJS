@@ -1,25 +1,25 @@
-/////////
-//generator functions
+// async and await //multithreading in javascript
 
-//////////////////
-function *arithmetic(num1, num2){
+function resolveAfter2Seconds() {
     
-    yield console.log("Addition : " + (num1+num2));
-    
-    yield console.log("Subtraction : " + (num1-num2));
-    
-    yield console.log("Multiply : " + (num1*num2));
-    
-    yield console.log("Division : " + (num1/num2));
-    
-    return "Done with Operations";
-}
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('resolved');
+      }, 5000);
+    });
 
-let calculator = arithmetic(6,2);
+  }
+  
+  console.log('async starts');
 
-calculator.next();
-calculator.next();
-calculator.next();
-calculator.next();
+  async function asyncCall() { //will be executed in new thread created by async
+    console.log('calling');
+    let result = await resolveAfter2Seconds(); //this function needs the thread craeted at line 15
+    console.log('call completed');
+    console.log(result);
+    // expected output: 'resolved'
+  }
 
-console.log(calculator.next());
+  asyncCall();
+
+  console.log('after async invocation');
