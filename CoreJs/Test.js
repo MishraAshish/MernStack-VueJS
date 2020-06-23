@@ -1,28 +1,23 @@
-// Promises : 
+// Iterators : filter, map, reduce and some
 
-let promise1 = new Promise(function(resolve, reject)
- {  
-    // setTimeout(function() {   //async callback               
-    //     resolve({
-    //         "status":200,
-    //         "success":"We are resolved",
-    //         "job":"laptop has been delivered"
-    //     });
-    // }, 3000);
+let persons = [
+        {id : 1, name : "John",  tags : "javascript"},
+        {id : 2, name : "Alice", tags : "javascript"},
+        {id : 3, name : "Roger", tags : "java"},
+        {id : 4, name : "Adam",  tags : "javascript"},
+        {id : 5, name : "Alex",  tags : "java"}
+    ];
 
-    setTimeout(function() {   //async callback               
-      reject({
-          "status":400,
-          "rejected":"We are rejecting our promise",
-          "job":"no more laptops"
-      });
-  }, 3000);
-});
+//Filter : give me the list of persons who's tag is javascript
 
-promise1.then(function(value) {  
-        console.log(value);  // expected output: success object/ resolved
-}).catch(function(value) {  
-        console.log(value);  // expected output: rejected object
-});
-         
-console.log(promise1);// expected output: [object Promise]
+let persJavasscript = persons.filter((person) => person.tags === "javascript")
+
+console.log(persJavasscript);
+
+//Map : give me the list of names who's tag is javascript
+
+let persNamesJavasscript = persons.map((person) => person.tags === "javascript" ? person.name : "").filter(obj => obj != "")
+
+console.log(persNamesJavasscript);
+
+console.log(persons); // not manipulated in base object
