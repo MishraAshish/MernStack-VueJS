@@ -20,4 +20,15 @@ let persNamesJavasscript = persons.map((person) => person.tags === "javascript" 
 
 console.log(persNamesJavasscript);
 
-console.log(persons); // not manipulated in base object
+
+//console.log(persons); // not manipulated in base object
+
+//Some : short circuit , when it finds value your're looking for it'll stop there and return ture/or false
+
+let hasPersonWithId10 = persons.some(person => person.id === 10)
+console.log(hasPersonWithId10);
+
+let isAdam = persons.some(person => person.name === "Adam")
+console.log(isAdam);
+
+//if id 5 is present, if Robert is present
