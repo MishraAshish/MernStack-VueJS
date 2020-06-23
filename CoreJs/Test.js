@@ -31,4 +31,25 @@ console.log(hasPersonWithId10);
 let isAdam = persons.some(person => person.name === "Adam")
 console.log(isAdam);
 
-//if id 5 is present, if Robert is present
+
+//Reduce : iterates every object and takes the value returned from the first operation as current object
+
+var uniqueTags = persons.reduce((currentitem, personObj) => {
+                        //console.log(currentitem);
+                        //console.log(personObj);
+
+                        currentitem[personObj.tags] = 1;
+                        return currentitem;
+                    },{});
+console.log(uniqueTags);
+
+
+var uniqueTagsCount = persons.reduce((currentitem, personObj) => {
+
+        console.log(currentitem);
+        
+        currentitem[personObj.tags] = currentitem[personObj.tags] ? currentitem[personObj.tags]+1 : 1;
+
+        return currentitem;
+    },{});
+console.log(uniqueTagsCount);
