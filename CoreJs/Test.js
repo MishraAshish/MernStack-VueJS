@@ -34,22 +34,27 @@ console.log(isAdam);
 
 //Reduce : iterates every object and takes the value returned from the first operation as current object
 
-var uniqueTags = persons.reduce((currentitem, personObj) => {
+let uniqueTags = persons.reduce((currentitem, personObj) => {
                         //console.log(currentitem);
                         //console.log(personObj);
 
                         currentitem[personObj.tags] = 1;
                         return currentitem;
                     },{});
-console.log(uniqueTags);
+//console.log(uniqueTags);
 
 
-var uniqueTagsCount = persons.reduce((currentitem, personObj) => {
+let uniqueTagsCount = persons.reduce((currentitem, personObj) => {
 
         console.log(currentitem);
         
         currentitem[personObj.tags] = currentitem[personObj.tags] ? currentitem[personObj.tags]+1 : 1;
 
         return currentitem;
-    },{});
+    }, {}); //initialize the currentItem [], {}
 console.log(uniqueTagsCount);
+
+
+//list the person id's, having java as their tags
+//find if there are csharp persons in list
+//what is the tag of person with name adam
