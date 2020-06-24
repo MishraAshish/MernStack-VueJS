@@ -20,3 +20,21 @@ var persons = [
 //promise related questions
 //1. create a promise to read user details after 2 seconds when resolved : should have status, name, age, city
 //2. create a promise to read error after 1 second when rejected : should have status, error
+
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+console.log('asyn starts');
+
+async function asyncCall() {
+  console.log('calling');
+  var result = await resolveAfter2Seconds();
+  console.log(result);
+  // expected output: 'resolved'
+}
+asyncCall();
