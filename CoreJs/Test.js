@@ -1,19 +1,42 @@
-console.log("Alleen");
+//Readable streams 
 
-let fs = require("fs"); //file systems module of node js to interact and do operations on file
+let fs = require("fs");
+// Create a readable stream 
+let readerStream = fs.createReadStream('./Text.txt'); 
+let data = "";
+// Set the encoding to be utf8. 
+readerStream.setEncoding('UTF8'); 
+// Handle stream events --> data, end, and error 
+readerStream.on('data', function(chunk) { 
+  //console.log(chunk);
+  
+  data += chunk; 
+}); 
 
-console.log("Before File Read");
+readerStream.on('end',function() { 
+  console.log("End of reading - ", data); 
+}); 
 
-//synchronous operation
-//let data = fs.readFileSync("./ModuleTest.js","utf-8"); //blocking the execution
-//console.log("File Data", data);
+readerStream.on('error', function(err) { 
+  console.log(err.stack); 
+}); 
 
+console.log("Program Ended Reading")
 
-//asynchronous operation
-fs.readFile("./ModuleTestzxasdas.js","utf-8",(err, data)=>{ // This kind of callback are node special call back                     
-  console.log("File Data", data);                    // and termed as error first callback
-  console.log("Error ", err);
-})
+data = data + " This is the write stream that we are using to write in to the file";
 
+let writerStream = fs.createWriteStream('./output.txt'); 
+// Write the data to stream with encoding to be utf8 
+writerStream.write(data,'UTF8'); 
+// Mark the end of file 
+writerStream.end(); 
+// Handle stream events --> finish, and error 
+writerStream.on('finish', function() 
+  { console.log("Write completed."); 
+}); 
 
-console.log("After File Read");
+writerStream.on('error', function(err) { 
+  console.log(err.stack); 
+}); 
+
+console.log("Program Ended Writing")
