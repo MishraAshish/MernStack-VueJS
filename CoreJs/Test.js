@@ -1,40 +1,19 @@
-// questions 
+console.log("Alleen");
 
-//Filter , Map, Reduce, Some
-var persons = [
-  {id : 1, name : "John", savedby : "CaptainAmerica"},
-  {id : 2, name : "Alice", savedby : "IronMan"},
-  {id : 3, name : "Roger", savedby : "CaptainAmerica"},
-  {id : 4, name : "Adam", savedby : "IronMan"},
-  {id : 5, name : "Alex", savedby : "SpiderMan"}
-];
+let fs = require("fs"); //file systems module of node js to interact and do operations on file
 
-//1. List the person objects who are saved by IronMan
-//2. List the person objects who are not saved by IronMan
-//3. List the person names who are saved by CaptainAmerica
-//4. List the person id who are not saved by SpiderMan
-//5. Check if ther are any who are saved by AntMan
-//6. Check if ther are any who are saved by SpiderMan
+console.log("Before File Read");
+
+//synchronous operation
+//let data = fs.readFileSync("./ModuleTest.js","utf-8"); //blocking the execution
+//console.log("File Data", data);
 
 
-//promise related questions
-//1. create a promise to read user details after 2 seconds when resolved : should have status, name, age, city
-//2. create a promise to read error after 1 second when rejected : should have status, error
+//asynchronous operation
+fs.readFile("./ModuleTestzxasdas.js","utf-8",(err, data)=>{ // This kind of callback are node special call back                     
+  console.log("File Data", data);                    // and termed as error first callback
+  console.log("Error ", err);
+})
 
-function resolveAfter2Seconds() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
-}
 
-console.log('asyn starts');
-
-async function asyncCall() {
-  console.log('calling');
-  var result = await resolveAfter2Seconds();
-  console.log(result);
-  // expected output: 'resolved'
-}
-asyncCall();
+console.log("After File Read");
