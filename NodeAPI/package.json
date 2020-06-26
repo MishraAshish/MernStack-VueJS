@@ -1,0 +1,35 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "Learning MERN Stack in synergisticit",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MishraAshish/nodeapi9.git"
+  },
+  "keywords": [
+    "Node",
+    "MogonDB",
+    "Express",
+    "React",
+    "and",
+    "Redux"
+  ],
+  "author": "SynergisticIT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MishraAshish/nodeapi9/issues"
+  },
+  "homepage": "https://github.com/MishraAshish/nodeapi9#readme",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "body-parser": "1.19.0",
+    "nodemon": "2.0.4"
+  }
+}
