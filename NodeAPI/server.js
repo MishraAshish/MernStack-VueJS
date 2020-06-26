@@ -1,10 +1,3 @@
-console.log("This is the first caommand in server.js");
-console.log("as a dev dependency : npm i express -D");
-console.log("as a production dependency : npm i express");
-console.log("Node Monitoring Tool : npm i nodemon -D");
-console.log("To Install All Modules present in pkg json : npm i");
-
-
 const express = require('express') //
 const app = express() //
  
