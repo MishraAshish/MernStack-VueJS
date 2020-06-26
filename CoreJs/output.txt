@@ -1,1 +1,1 @@
-/n This is the write stream that we are using to write in to the file
+ This is the write stream that we are using to write in to the file

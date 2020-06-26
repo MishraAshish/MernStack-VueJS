@@ -1,3 +1,7 @@
+console.log("FileName ", __filename)
+console.log("Directory ", __dirname)
+
+
 //Readable streams 
 
 let fs = require("fs");
@@ -8,9 +12,8 @@ let data = "";
 readerStream.setEncoding('UTF8'); 
 // Handle stream events --> data, end, and error 
 readerStream.on('data', function(chunk) { 
-  //console.log(chunk);
-  
-  data += chunk; 
+  //console.log(chunk);  
+  data += chunk;   
 }); 
 
 readerStream.on('end',function() { 
