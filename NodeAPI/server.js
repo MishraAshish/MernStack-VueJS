@@ -5,12 +5,14 @@ const express = require('express') // when we use installed we need not to speci
 const app = express() //when we use paranthesis, this sets the base for our application infact creates an express app
  
 app.get('/HelloWorld', function (req, res) {
+  //console.log("req ",req)
   //res.send('Hello World')
   res.json(
     {
       Greet:'Hello World',
       Learn : "Express",
-      "Express Object" : "Instantiate by parenthesis"
+      "Express Object" : "Instantiate by parenthesis",
+      name: req.query.name
     })
 })
 
