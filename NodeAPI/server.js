@@ -8,7 +8,9 @@ const admin = express()
 app.use('/static', express.static('Public')); // serve static files like images css using static middle ware
 
 app.get('/HelloWorld', function (req, res) {
-  //console.log("req ",req)
+  //console.log("req - baseurl ",req.originalUrl)
+  //console.log("req -ip ",req.ip)
+  //console.log("req -cookie ",req.cookies)
   //res.send('Hello World')
   res.json(
     {
