@@ -3,8 +3,8 @@ const express = require('express') // when we use installed we need not to speci
 //console.log(express); // its the object that has been returned raw from express module
 
 const app = express() //when we use paranthesis, this sets the base for our application infact creates an express app
- 
-//const app2 = express()
+const admin = express()
+
 app.use('/static', express.static('Public')); // serve static files like images css using static middle ware
 
 app.get('/HelloWorld', function (req, res) {
@@ -22,6 +22,16 @@ app.get('/HelloWorld', function (req, res) {
 
 app.get('/SecondAPI', function (req, res) {
     res.send('This is the second URI running in my node machine')
+})
+
+app.use("/admin",admin); // mounted a new application module
+
+admin.get('/HelloWorld', function (req, res) {
+  res.send("<h1>HelloWorld from admin<h1>")
+})
+
+admin.get('/', function (req, res) {
+  res.send("<h1>I am from admin<h1>")
 })
 
 app.get('/', function (req, res) {
