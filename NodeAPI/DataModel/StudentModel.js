@@ -8,7 +8,8 @@ let StudentModel = new schemaObj(
             name: {type:String, required:true},
             age: {type:Number, required:true},
             bio: String,
-            mobile:Number 
+            mobile:Number,
+            adress: Object //{line1: "asdasd", line2:"dasdas" }
         },
         {
             versionKey: false //false - set to false then it wont create in mongodb
