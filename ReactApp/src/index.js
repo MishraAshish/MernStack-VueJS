@@ -1,0 +1,1 @@
+console.log("This is all the setup and loading before the react project loads")
