@@ -1,1 +1,9 @@
-console.log("This is all the setup and loading before the react project loads")
+import React from "react";
+import {render} from "react-dom";
+
+import App from "./App/app";
+
+render(
+    <App/>,
+    document.getElementById("root") //rendering react application over root element created in index.html : bootstrapping
+)
