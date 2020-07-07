@@ -27,4 +27,6 @@ git clone https://github.com/MishraAshish/nodeapi9.git
 // subsequent times we need to run - git pull
 
 //if you have changes in your machine - so either you resolve that or use 
-//git reset --hard and then take git pull
+//git reset --hard and then take 
+//git pull
+//git clean -fd
