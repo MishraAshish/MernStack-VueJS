@@ -16,10 +16,16 @@ export default class App extends React.Component{
 
     changeState(){
         setInterval(() => {
+            console.log("Timer");
             this.setState({
-                timer:this.state.timer+1
+                timer:1
             })
         }, 1000);
+
+        // setInterval(() => { //run this on  browser console to compare the two ways of rendering
+        //     console.log("Timer");
+        //     document.getElementById("name").innerText = "Ashish"
+        // }, 1000);
     }
 
     render(){
@@ -34,7 +40,7 @@ export default class App extends React.Component{
                 <br/>
                 {this.globalVariable}
                 <hr/>
-                Name : <b>{this.state.name}</b>                
+                Name : <b id="name">{this.state.name}</b>                
                 <h1>State Changes : {this.state.timer}</h1>
             </div>
         )
