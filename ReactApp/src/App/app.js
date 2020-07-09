@@ -18,7 +18,7 @@ export default class App extends React.Component{
         setInterval(() => {
             console.log("Timer");
             this.setState({
-                timer:1
+                timer:this.state.timer + 1
             })
         }, 1000);
 

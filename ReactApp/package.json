@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
-    "build": "webpack -p && copy src\\index.html dist\\index.html && webpack-dev-server --port 9092 --content-base src/ --hot --history-api-fallback",
+    "build": "webpack -p && copy src\\index.html dist\\index.html && webpack-dev-server",
     "build-mac": "webpack -p && cp src/index.html dist/index.html && webpack-dev-server --port 9092 --content-base src/ --hot --history-api-fallback",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +27,7 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "serialize-javascript": "4.0.0"
   }
 }

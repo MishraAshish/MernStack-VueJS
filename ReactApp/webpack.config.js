@@ -52,18 +52,29 @@ webpackConfig = {
     },
     
     devServer: {
-        contentBase: __dirname,
+        contentBase:[
+            path.join(__dirname, 'dist'),
+            path.join(__dirname, 'src'),
+            // and so on...
+          ] ,//__dirname+"/dist",
+        //hot: true,
         inline: false,
+        host: "localhost",
         //host: "local.synergiticit.com",
-        port:9092,
-        // watchContentBase: true,
+        port:9092,        
         //https: true,
     
         //for supporting history api fallback
         historyApiFallback: {
           index: '/'
         },
-        //compress: true
+        //compress: true,
+        // 'Live-reloading' happens when you make changes to code
+        // dependency pointed to by 'entry' parameter explained earlier.
+        // To make live-reloading happen even when changes are made
+        // to the static html pages in 'contentBase', add 
+        // 'watchContentBase'
+        watchContentBase: true
     },
     //devtool: 'source-map',
     //mode: 'production'
