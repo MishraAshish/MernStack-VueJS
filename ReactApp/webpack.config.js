@@ -53,8 +53,8 @@ webpackConfig = {
     
     devServer: {
         contentBase:[
-            path.join(__dirname, 'dist'),
-            path.join(__dirname, 'src'),
+            path.join(DIST_DIR),
+            path.join(SRC_DIR),
             // and so on...
           ] ,//__dirname+"/dist",
         //hot: true,

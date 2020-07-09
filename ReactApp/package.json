@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "webpack -p && copy src\\index.html dist\\index.html && webpack-dev-server",
-    "build-mac": "webpack -p && cp src/index.html dist/index.html && webpack-dev-server --port 9092 --content-base src/ --hot --history-api-fallback",
+    "build-mac": "webpack -p && cp src/index.html dist/index.html && webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "synergisticit",
