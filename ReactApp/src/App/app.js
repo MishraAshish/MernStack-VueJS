@@ -1,7 +1,8 @@
 import React, {Component, PureComponent} from "react";
+import Footer from "./CommonComponents/FooterComponent";
 
-export default class App extends React.Component{
 
+export default class App extends Component{
     
     constructor(props, context){
         super(props, context);
@@ -37,11 +38,13 @@ export default class App extends React.Component{
                 <h1>Welcome to react</h1>
                 <h1>{displayMessage}</h1>
                 <b>Added : {val1+val2}</b> 
+                <b>Exponent : {2**3}</b> 
                 <br/>
                 {this.globalVariable}
                 <hr/>
                 Name : <b id="name">{this.state.name}</b>                
-                <h1>State Changes : {this.state.timer}</h1>
+                <h1>State Changes : {this.state.timer} : {this.state.timer**2} </h1>
+                <Footer/>
             </div>
         )
     }
