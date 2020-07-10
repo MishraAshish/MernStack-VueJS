@@ -1,12 +1,29 @@
-import React from "react";
+import React from "react"; //Reads React.CreateElement... for converted JSX by @react.presets (babel transpiler)
 
-let Footer = (props)=>{
+//functional component written in Arrow Format
+let Footer = (props, context)=>{
     return(
         <div>
             <hr/>
-            <h1>This is a footer component</h1>
+            <h1>{props.cpMsg}</h1>
+            <h1>{props.name}</h1>
+            <br/>
+            {props.children[0]}
+            <br/>
+            {props.children[1]}
+            
         </div>
     )
 }
 
 export default Footer;
+
+// //functional component written normal
+// export function Header(params) {
+//     return(
+//         <div>
+//             <hr/>
+//             <h1>This is a Header component</h1>
+//         </div>
+//     )
+// }
