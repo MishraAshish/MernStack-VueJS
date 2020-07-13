@@ -15,7 +15,12 @@ export default class App extends Component{
         }
 
         this.globalVariable = "This is a global variable";
+        console.log("constructor")
         this.changeState();
+    }
+
+    componentWillMount(){
+        console.log("componentWillMount")
     }
 
     changeState(){
@@ -38,6 +43,9 @@ export default class App extends Component{
     }
 
     render(){
+        
+            console.log("Render")
+        
         let displayMessage = "This is the first page of the application";
         let val1 = 25, val2 = 32;
         let copyrightMsg = "Copyright To Synergisticit";
@@ -53,7 +61,7 @@ export default class App extends Component{
                 <hr/>
                 Name : <b id="name">{this.state.name}</b>                
                 <h1>State Changes : {this.state.timer} : {this.state.timer**2} </h1>
-                <Home />
+                <Home timer={this.state.timer}/>
                 
                 <Footer cpMsg={copyrightMsg} name="Brian">
                     <div>

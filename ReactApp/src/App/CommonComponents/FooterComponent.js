@@ -3,7 +3,7 @@ import React from "react"; //Reads React.CreateElement... for converted JSX by @
 //functional component written in Arrow Format
 let Footer = (props, context)=>{
     return(
-        <div>
+        <React.Fragment>
             <hr/>
             <h1>{props.cpMsg}</h1>
             <h1>{props.name}</h1>
@@ -12,7 +12,7 @@ let Footer = (props, context)=>{
             <br/>
             {props.children[1]}
             
-        </div>
+        </React.Fragment>
     )
 }
 
