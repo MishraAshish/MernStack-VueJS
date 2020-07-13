@@ -1,22 +1,13 @@
 import React, {Component} from "react";
+import {PropTypes} from "prop-types";
 
 export default class Home extends Component{
     
     constructor(props, context){
         super(props, context);
         this.state = {
-            date : new Date()
+            msg: props.msg
         }
-
-        this.changeState();
-    }
-
-    changeState(){
-        setInterval(() => {
-            this.setState({
-                date : new Date()
-            })
-        }, 1000);
     }
 
     render(){
@@ -24,8 +15,18 @@ export default class Home extends Component{
             <div>
                 <i>This is going to be the home</i>
                 <br/>
-                <i>{this.state.date.toISOString()}</i>
+                <i>{this.state.msg}</i>
+                <br />
+                <i>{this.props.msg}</i>
             </div>
         )
     }
 }  
+
+Home.propTypes = {
+    msg: PropTypes.string.isRequired
+}
+
+Home.defaultProps = {
+    msg : "This is the default message, in case value not returned from parent"
+}

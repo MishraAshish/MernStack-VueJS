@@ -10,7 +10,8 @@ export default class App extends Component{
         
         this.state = {
             timer : 1,
-            name: "Synergisticit"
+            name: "Synergisticit",
+            msgForHome : "This Message Must be displayed in home component"
         }
 
         this.globalVariable = "This is a global variable";
@@ -19,14 +20,14 @@ export default class App extends Component{
 
     changeState(){
         setInterval(() => {
-            console.log("Timer", this.state.timer);
+            //console.log("Timer", this.state.timer);
 
             this.setState({
-                timer: this.state.timer + 1
+                timer: this.state.timer + 1                
             })
 
             this.globalVariable = "Changed Value";
-            console.log(this.globalVariable);
+            //console.log(this.globalVariable);
             
         }, 1000);
         
