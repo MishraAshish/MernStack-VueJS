@@ -11,12 +11,21 @@ export default class App extends Component{
         this.state = {
             timer : 1,
             name: "Synergisticit",
-            msgForHome : "This Message Must be displayed in home component"
+            msgForHome : "This Message Must be displayed in home component",
+            sessionName : "MERNStack"
         }
 
         this.globalVariable = "This is a global variable";
         console.log("constructor")
-        this.changeState();
+        //this.changeState();
+    }
+
+    getDataFromChild = (childSessionName) => {
+        //alert(childSessionName);
+
+        this.setState({
+            sessionName:childSessionName
+        })
     }
 
     componentWillMount(){
@@ -44,7 +53,7 @@ export default class App extends Component{
 
     render(){
         
-            console.log("Render")
+            console.log("Parent Render - App Component")
         
         let displayMessage = "This is the first page of the application";
         let val1 = 25, val2 = 32;
@@ -52,16 +61,18 @@ export default class App extends Component{
         //JSX : javascript as xml, it is not an html but javascript to generate html and javascript
         return(
             <div>
-                <h1>Welcome to react</h1>
-                <h1>{displayMessage}</h1>
+                <h1>Welcome to react-  App</h1>
+                {/* <h1>{displayMessage}</h1>
                 <b>Added : {val1+val2}</b> 
                 <b>Exponent : {2**3}</b> 
                 <br/>
                 {this.globalVariable}
-                <hr/>
+                
                 Name : <b id="name">{this.state.name}</b>                
-                <h1>State Changes : {this.state.timer} : {this.state.timer**2} </h1>
-                <Home timer={this.state.timer}/>
+                <h1>State Changes : {this.state.timer} : {this.state.timer**2} </h1> */}
+                <b>{this.state.sessionName}</b>
+                <hr/>
+                <Home timer={this.state.timer} sessionName={this.state.sessionName} returnMsg={this.getDataFromChild} />
                 
                 <Footer cpMsg={copyrightMsg} name="Brian">
                     <div>

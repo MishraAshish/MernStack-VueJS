@@ -24,7 +24,10 @@ webpackConfig = {
                 loader: "babel-loader", 
                 enforce: 'pre',
                 query: {
-                    presets: ["@babel/env", "@babel/react"]
+                    presets: ["@babel/env", "@babel/react"],
+                    plugins: [
+                        "@babel/plugin-proposal-class-properties"
+                      ]
                 }
             },
             {
