@@ -3,6 +3,7 @@ import {PropTypes} from "prop-types";
 
 export default class Home extends Component{
     
+    //creation life cycle methods
     constructor(props, context){
         super(props, context); // props: are immutable and shared by parent to use
         this.state = { // state : is mutable and remains within the component
@@ -10,6 +11,19 @@ export default class Home extends Component{
             sessionName: props.sessionName,
             inputValue: "Initial Value"
         }                
+    }
+
+    componentWillMount(){
+        console.log("componentWillMount")
+    }
+
+    componentDidMount(){
+        console.log("componentDidMount")
+    }
+
+    //component will unmount
+    componentWillUnmount(){
+        console.log("componentDidMount")
     }
 
     changeSessionName = () => {
