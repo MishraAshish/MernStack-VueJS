@@ -8,7 +8,7 @@ export default class Home extends Component{
         this.state = { // state : is mutable and remains within the component
             msg: props.msg, // We are copying the props to state variable coming from parent
             sessionName: props.sessionName,
-            update:0
+            inputValue: "Initial Value"
         }                
     }
 
@@ -28,6 +28,17 @@ export default class Home extends Component{
         //forceUpdate - this should be avoided, it skips life cycle methods of component
     }
 
+    readUserInput = (evt) => {//evt : belongs to the html element raising the event in our case its input box        
+        let targetValue = evt.target.value; //javascripts basic way
+        console.log("There are changes in input box", evt.target)
+
+        //if (isNaN(targetValue) || targetValue == "") {
+            this.setState({
+                inputValue: targetValue
+            })    
+        //}        
+    }
+
     //Update LifeCyle
     componentWillReceiveProps(nextProps){
         console.log("componentWillReceiveProps -", nextProps);
@@ -35,13 +46,13 @@ export default class Home extends Component{
 
     //life cycle method
     shouldComponentUpdate(nextProps, nextState){
-        console.log("shouldComponentUpdate -");
-        console.log("nextProps -", nextProps );
-        console.log("nextState -", nextState);
-        if (nextState.sessionName !== this.state.sessionName || nextProps.sessionName !== this.props.sessionName) {
-            return true; //go and call the render
-        }else
-            return false; // do not call the render
+        // console.log("shouldComponentUpdate -");
+        // console.log("nextProps -", nextProps );
+        // console.log("nextState -", nextState);
+        // if (nextState.sessionName !== this.state.sessionName || nextProps.sessionName !== this.props.sessionName) {
+        //     return true; //go and call the render
+        // }else
+        //     return false; // do not call the render
         return true;
     }
 
@@ -62,7 +73,13 @@ export default class Home extends Component{
                 <b><i>Session Name From State = {this.state.sessionName}</i></b>
                 <button onClick={this.changeSessionName}>Change Session Name</button>  
                 <br/>
-                <button onClick={() => this.props.returnMsg("Mongo DB")}>Send Back To Parent</button>  
+                <button onClick={() => this.props.returnMsg(this.state.inputValue)}>Send Back To Parent</button>  
+                
+                <br/>                
+                <input type="text" placeholder="Please provide your input" value={this.state.inputValue} onChange={this.readUserInput}/>
+
+                <b>{this.state.inputValue}</b>
+
             </React.Fragment>
         )
     }
