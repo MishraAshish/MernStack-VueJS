@@ -11,12 +11,18 @@ import {About} from "./CommonComponents/AboutComponent";
 export default class App extends React.Component{    
 
     render(){//virtual dom
+        let isAdmin = false;//true; // this decision should come from server
+
         return(
             <Router>
                 <Header/>
                 <Switch>
+                    {/* <Route path="/home" render={()=>
+                                (isAdmin == 1 ? (<Redirect to="/about/" />) :(<Home/>))} />          */}
+                                
                     <Route path="/home" exact component={Home} />
                     <Route path="/about" exact component={About} />
+                    <Route path="/about/:id" component={About} />
                     <Route path="*" exact component={Home} />
                 </Switch>
                 <Footer/>

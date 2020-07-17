@@ -6,8 +6,8 @@ let Header = (props) => {
     //read user from props his name and then create two set of links
     return(
         <div className="col-md-12">
-            <NavLink to="/home" exact className="button" activeClassName="success" >Home </NavLink> 
-            <NavLink to="/about" exact className="button" activeClassName="success">About  </NavLink>
+            <NavLink to="/home" className="button" activeClassName="success" >Home </NavLink> 
+            <NavLink to="/about" className="button" activeClassName="success">About  </NavLink>
          </div>
     )
 }

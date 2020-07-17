@@ -1,6 +1,6 @@
 import React from 'react';  
 export function About (props){  
-    let param = props.match.params["id"];
+    let param = props.match.params["id"]; //reading the param in path /about/:id
     //console.log(param);
     return (
         <div className="about" >  

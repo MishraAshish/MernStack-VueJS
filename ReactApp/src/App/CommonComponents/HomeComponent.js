@@ -13,7 +13,7 @@ export default class Home extends Component{
 
         console.log("Constructor called first and only one time when component gets invoked.");
 
-        this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
+        //this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
     }
 
     componentWillMount(){
@@ -28,8 +28,8 @@ export default class Home extends Component{
         console.log("componentDidMount");
 
         //accessing the actual DOM using ref keyword
-        this.textInput.current.focus();
-        this.textInput.current.value = "Setting Up Reference Value in component did mount";
+        //this.textInput.current.focus();
+        //this.textInput.current.value = "Setting Up Reference Value in component did mount";
     }
 
     //destructuring life-cycle method
@@ -99,13 +99,13 @@ export default class Home extends Component{
                         <li>Save the user's cart.</li>
                         <li>Checkout and pay for items.</li>
                     </ul>
-                    {/* <button onClick={()=> (this.props.history.push("/about/51"))}>GoTo About Page</button> */}
+                    <button onClick={()=> (this.props.history.push("/about"))}>GoTo About Page</button>
 
-                    <p><b>{this.state.msg}</b></p>
-                    <button onClick={this.changeMessage}>Click Me</button>  
+                    {/* <p><b>{this.state.msg}</b></p>
+                    <button onClick={this.changeMessage}>Click Me</button> 
 
-                    {/* this is ref element to be accessed directly in code */}
-                    <input type="text" ref={this.textInput} value="learning ref in react"/>
+                    this is ref element to be accessed directly in code
+                    <input type="text" ref={this.textInput} value="learning ref in react"/> */}
             </div>
         )
     }
