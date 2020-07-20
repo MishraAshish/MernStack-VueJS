@@ -114,7 +114,8 @@ export default class Home extends Component{
                         <li>Save the user's cart.</li>
                         <li>Checkout and pay for items.</li>
                     </ul>
-                    <button onClick={()=> (this.props.history.push("/about"))}>GoTo About Page</button>
+
+                    <button onClick={()=> (this.props.history.push("/about/2500"))}>GoTo About Page</button>
 
                     <p><b>{this.state.msg}</b></p>
                     <button onClick={this.changeMessage} >Click Me</button>

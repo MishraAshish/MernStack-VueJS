@@ -8,7 +8,7 @@ import {About} from "./CommonComponents/AboutComponent";
 
 
 //export default class App extends Component{
-export default class App extends React.Component{    
+export default class App extends React.Component{     
 
     render(){//virtual dom
         let isAdmin = false;//true; // this decision should come from server
