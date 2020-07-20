@@ -8,7 +8,8 @@ export default class Home extends Component{
     constructor(props, context){
         super(props, context); // props: are immutable and shared by parent to use
         this.state = { // state : is mutable and remains within the component
-            msg: "This is the Home Page", // We are copying the props to state variable coming from parent            
+            msg: "This is the Home Page", // We are copying the props to state variable coming from parent  
+            secondMsg: props.someMsg          
         }                
 
         console.log("Constructor called first and only one time when component gets invoked.");
@@ -80,8 +81,18 @@ export default class Home extends Component{
 
     changeMessage = ()=>{
         this.setState({ // when updated like this render gets called so change gets reflected on UI
-            msg: this.state.msg + " 1"
+            msg: this.state.msg + 1
         })
+    }
+
+    readUserInput = (evt) => {//evt : belongs to the html element raising the event in our case its input box        
+        let targetValue = evt.target.value; //javascripts basic way
+
+        //if (isNaN(targetValue) || targetValue == "") {
+            this.setState({
+                inputValue: targetValue
+            })    
+        //}        
     }
 
     render(){
@@ -101,10 +112,10 @@ export default class Home extends Component{
                     </ul>
                     <button onClick={()=> (this.props.history.push("/about"))}>GoTo About Page</button>
 
-                    {/* <p><b>{this.state.msg}</b></p>
-                    <button onClick={this.changeMessage}>Click Me</button> 
-
-                    this is ref element to be accessed directly in code
+                    <p><b>{this.state.msg}</b></p>
+                    <button onClick={this.changeMessage} >Click Me</button>
+                    <input type="text" placeholder="Please provide your input" value={this.state.inputValue} onChange={this.readUserInput}/>
+                    {/*this is ref element to be accessed directly in code
                     <input type="text" ref={this.textInput} value="learning ref in react"/> */}
             </div>
         )
@@ -175,7 +186,7 @@ Home.defaultProps = {
     //             {/* <button onClick={() => this.props.returnMsg(this.state.inputValue)}>Send Back To Parent</button>  
                 
     //             <br/>                 */}
-    //             <input type="text" placeholder="Please provide your input" value={this.state.inputValue} onChange={this.readUserInput}/>
+             
 
     //             <b>{this.state.inputValue}</b>
 
