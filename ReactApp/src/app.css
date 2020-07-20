@@ -620,6 +620,7 @@ textarea,
   background-color: #fff;
   border-radius: 0.2em;
   transition: all 0.3s;
+  color: black;
   width: 100%; }
   input:focus,
   textarea:focus,

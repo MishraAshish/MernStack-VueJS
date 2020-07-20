@@ -14,7 +14,7 @@ export default class Home extends Component{
 
         console.log("Constructor called first and only one time when component gets invoked.");
 
-        //this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
+        this.textInput = React.createRef(); //creating ref element : Needs to be avoided in actual use unless necessary
     }
 
     componentWillMount(){
@@ -29,8 +29,10 @@ export default class Home extends Component{
         console.log("componentDidMount");
 
         //accessing the actual DOM using ref keyword
-        //this.textInput.current.focus();
-        //this.textInput.current.value = "Setting Up Reference Value in component did mount";
+        setTimeout(() => {
+            this.textInput.current.focus();
+            this.textInput.current.value = "Setting Up Reference Value in component did mount";    
+        }, 3000);       
     }
 
     //destructuring life-cycle method
@@ -83,6 +85,8 @@ export default class Home extends Component{
         this.setState({ // when updated like this render gets called so change gets reflected on UI
             msg: this.state.msg + 1
         })
+
+        //this.textInput.current.value = "This change is done on click"; //if using this comment the above setState
     }
 
     readUserInput = (evt) => {//evt : belongs to the html element raising the event in our case its input box        
@@ -115,8 +119,8 @@ export default class Home extends Component{
                     <p><b>{this.state.msg}</b></p>
                     <button onClick={this.changeMessage} >Click Me</button>
                     <input type="text" placeholder="Please provide your input" value={this.state.inputValue} onChange={this.readUserInput}/>
-                    {/*this is ref element to be accessed directly in code
-                    <input type="text" ref={this.textInput} value="learning ref in react"/> */}
+                    {/*this is ref element to be accessed directly in code*/}
+                    <input type="text" ref={this.textInput} value="learning ref in react"/> 
             </div>
         )
     }
