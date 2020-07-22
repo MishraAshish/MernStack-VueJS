@@ -5,6 +5,7 @@ import Footer from "./CommonComponents/FooterComponent";
 import Home from "./CommonComponents/HomeComponent";
 import Header from "./CommonComponents/HeaderComponent";
 import {About} from "./CommonComponents/AboutComponent";
+import User from "./ApplicationComponents/Component/User/UserComponent";
 
 
 //export default class App extends Component{
@@ -21,6 +22,7 @@ export default class App extends React.Component{
                                 (isAdmin == 1 ? (<Redirect to="/about/" />) :(<Home/>))} />          */}
                                 
                     <Route path="/home" exact component={Home} />
+                    <Route path="/user" exact component={User} />
                     <Route path="/about" exact component={About} />
                     <Route path="/about/:id" component={About} />
                     <Route path="*" exact component={Home} />

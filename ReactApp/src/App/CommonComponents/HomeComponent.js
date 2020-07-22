@@ -1,5 +1,6 @@
 import React, {Component, PureComponent} from "react";
 import {PropTypes} from "prop-types";
+import User from "../ApplicationComponents/Component/User/UserComponent";
 
 //export default class Home extends PureComponent{ // when using this need not to implement shouldComponentUpdate
 export default class Home extends Component{
@@ -115,13 +116,14 @@ export default class Home extends Component{
                         <li>Checkout and pay for items.</li>
                     </ul>
 
-                    <button onClick={()=> (this.props.history.push("/about/2500"))}>GoTo About Page</button>
+                    <button onClick={()=> this.props.history.push("/about/2500")}>GoTo About Page</button>
+                    <User/>
 
-                    <p><b>{this.state.msg}</b></p>
+                    {/* <p><b>{this.state.msg}</b></p>
                     <button onClick={this.changeMessage} >Click Me</button>
                     <input type="text" placeholder="Please provide your input" value={this.state.inputValue} onChange={this.readUserInput}/>
-                    {/*this is ref element to be accessed directly in code*/}
-                    <input type="text" ref={this.textInput} value="learning ref in react"/> 
+                    {/*this is ref element to be accessed directly in code
+                    <input type="text" ref={this.textInput} value="learning ref in react"/>  */}
             </div>
         )
     }
