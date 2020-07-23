@@ -1,8 +1,41 @@
 const express = require("express")
-const router = express.Router({caseSensitive:true}),
-studentModel = require("./DataModel/StudentModel");
+const routes = express.Router({caseSensitive:true}),
+studentModel = require("./DataModel/StudentModel"),
+UserModel = require("./DataModel/UserModel");
 
-router.get('/SaveStudent', function (req, res) {
+
+routes.post("/api/signInUpUser",(req, res)=>{ //first post call to save the user
+    console.log(req.body); // is passed in ajax call of signInUpUser from react LoginUser click action
+
+    UserModel.findOne({userName: req.body.userName}, (err, userObject) => { //error first callback
+        if (err != null) { //if error occurs at the time of user object search
+            console.log("Error :", err);
+            res.send({"Err":err});
+        } else if (userObject) {
+            res.json(userObject);
+        } else{            
+            let signObjForMongo = new UserModel(req.body); //auto assigns value to
+            
+            // let signObjForMongo = new signInModel({
+            //     userName: req.body.userName,
+            //     password: req.body.password,
+            //     street: req.body.street,
+            //     mobile : req.body.mobile
+            //   });
+
+            signObjForMongo.save((err, data, next)=>{//data : the same user object that saved and contains mongodb id
+                if (err) {
+                    res.send("Error Occurred While Siging User "+ err);
+                } else{     
+                    res.json(data);
+                }
+            });
+        }
+    })
+
+})
+
+routes.get('/SaveStudent', function (req, res) {
     console.log(req.query);    
 
     //use the model to save data to mongodb
@@ -27,7 +60,7 @@ router.get('/SaveStudent', function (req, res) {
 
 
 
-router.get('/HelloWorld', function (req, res) {
+routes.get('/HelloWorld', function (req, res) {
     //res.send('Hello World')
     res.json(
       {
@@ -39,18 +72,18 @@ router.get('/HelloWorld', function (req, res) {
       })
 })
   
-router.get('/SecondAPI', function (req, res) {
+routes.get('/SecondAPI', function (req, res) {
     res.send('This is the second URI running in my node machine')
 })
 
-router.get('/', function (req, res) {
+routes.get('/', function (req, res) {
     //res.send("<h1>Learning Express of MERNSTack<h1>")
     res.sendFile(__dirname+"/package.json")
 })
 
-router.get('*', function (req, res) {
+routes.get('*', function (req, res) {
     res.send("<h1>Learning Express of MERNSTack<h1>")
 })
 
 
-module.exports = router;
+module.exports = routes;

@@ -7,11 +7,24 @@ export default class User extends Component{
     constructor(props, context){
         super(props, context);
         this.state = {
-            userName: "Default User Name",
-            password: "props.user.password",
-            street: "props.user.street",
-            mobile: "props.user.mobile"
+            userName: props.user.userName, // as our component is subscribed in UserContainer
+            password: props.user.password,
+            street: props.user.street,
+            mobile: props.user.mobile
         }
+    }
+
+    //as we update the state in user reducer we need to update component when we recive it as props 
+    //once broadcated by store
+    componentWillReceiveProps(nextProps){
+        console.log("next props", nextProps);
+        this.setState({
+            userName: nextProps.user.userName,
+            password: nextProps.user.password,
+            street: nextProps.user.street,
+            mobile: nextProps.user.mobile,
+            _id:nextProps.user._id
+        })
     }
 
     onChangeText = (evt)=>{
@@ -42,9 +55,9 @@ export default class User extends Component{
     }
 
     LoginUser = ()=>{
-        alert("Login Facility is not available now" + JSON.stringify(this.state));
-        //console.log(this.state);
-        //this.props.loginUser(this.state);
+        //alert("Login Facility is not available now" + JSON.stringify(this.state));
+        console.log(this.state);
+        this.props.loginUser(this.state);
     }
 
     render(){
@@ -76,7 +89,7 @@ export default class User extends Component{
                             placeholder="Mobile" maxLength="11"
                             onChange={this.onChangeText} />
                     </div>
-
+                    {this.state._id}
                     <input type="button" className={"btn btn-primary col-md-2 saveUser"} value={"SignIn-Up"} onClick={this.LoginUser}/>
                 </div>
             </section>

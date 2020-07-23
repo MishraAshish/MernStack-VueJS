@@ -5,7 +5,7 @@ import Footer from "./CommonComponents/FooterComponent";
 import Home from "./CommonComponents/HomeComponent";
 import Header from "./CommonComponents/HeaderComponent";
 import {About} from "./CommonComponents/AboutComponent";
-import User from "./ApplicationComponents/Component/User/UserComponent";
+import User from "./ApplicationComponents/Container/User/UserContainer";
 
 
 //export default class App extends Component{
