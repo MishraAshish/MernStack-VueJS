@@ -1,6 +1,5 @@
 import React, {Component, PureComponent} from "react";
 import {PropTypes} from "prop-types";
-import User from "../ApplicationComponents/Component/User/UserComponent";
 
 //export default class Home extends PureComponent{ // when using this need not to implement shouldComponentUpdate
 export default class Home extends Component{
@@ -30,10 +29,10 @@ export default class Home extends Component{
         console.log("componentDidMount");
 
         //accessing the actual DOM using ref keyword
-        setTimeout(() => {
-            this.textInput.current.focus();
-            this.textInput.current.value = "Setting Up Reference Value in component did mount";    
-        }, 3000);       
+        //setTimeout(() => {
+            //this.textInput.current.focus();
+            //this.textInput.current.value = "Setting Up Reference Value in component did mount";    
+        //}, 3000);       
     }
 
     //destructuring life-cycle method
@@ -117,7 +116,6 @@ export default class Home extends Component{
                     </ul>
 
                     <button onClick={()=> this.props.history.push("/about/2500")}>GoTo About Page</button>
-                    <User/>
 
                     {/* <p><b>{this.state.msg}</b></p>
                     <button onClick={this.changeMessage} >Click Me</button>
