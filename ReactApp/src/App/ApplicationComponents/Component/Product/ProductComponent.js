@@ -54,12 +54,12 @@ export default class Product extends React.Component {
         console.log("this - ", nextProps);
         //if (this.props.loading) {
             this.setState({
-                name :this.props.defaultProd.name,
-                price : this.props.defaultProd.price,
-                camera : this.props.defaultProd.camera,
-                ram : this.props.defaultProd.ram,
-                display : this.props.defaultProd.display,
-                color : this.props.defaultProd.color,
+                name : nextProps.defaultProd.name,
+                price : nextProps.defaultProd.price,
+                camera : nextProps.defaultProd.camera,
+                ram : nextProps.defaultProd.ram,
+                display : nextProps.defaultProd.display,
+                color : nextProps.defaultProd.color,
                 products: nextProps.products
             })
         //}
