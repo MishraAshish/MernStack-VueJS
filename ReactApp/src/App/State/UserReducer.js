@@ -22,16 +22,12 @@ export default function userReducer(state=INITIAL_STATE, action) {
 
         case ActionTypes.AddUserToStore:
             console.log("User PayLoad", action.payload.user);
-            //below code is maintaining the immutability of state using spread operator
-            //...state = {user:user,loading:loading}
-            //{loading:loading} && user = action.payload.user (new user object gets created)
-            
-            //{loading:loading} + {user:user} = {loading:loading, user:user} - a new state object is returned
+            //...state = {user:user, loading:false}
+            //{loading:false, user:newuser (action.payload.user)}
+            // out of all the states present in  ...state we pluck out user and create and add a new user object
+            //eventually return a complete new state, following the concept of data immutability
 
-            //it will pluck user obeject and update that with payload.user value
-            //then a complete new state would be returned from user reducer
-            
-            return {...state, user: action.payload.user}
+            return {...state, user: action.payload.user} //a complete new state
 
         default:
             return state

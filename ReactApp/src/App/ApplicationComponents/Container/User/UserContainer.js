@@ -8,7 +8,7 @@ import UserComponent from "../../Component/User/UserComponent";//getting the rea
 import {signInUpUser} from "../../../State/Actions"; // use to dispatch the user data
 
 //To make your component a subscriber of store (mapStoreToProps)
-let mapStateToProps = (store)=> {
+let mapStateToProps = (store)=> { //store can be named state as well
     return {
         user: store.user.user
     }

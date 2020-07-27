@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom
 import Footer from "./CommonComponents/FooterComponent";
 import Home from "./CommonComponents/HomeComponent";
 import Header from "./CommonComponents/HeaderComponent";
+import NotFound from "./CommonComponents/NotFoundComponent";
 import {About} from "./CommonComponents/AboutComponent";
 import User from "./ApplicationComponents/Container/User/UserContainer";
 
@@ -25,7 +26,8 @@ export default class App extends React.Component{
                     <Route path="/user" exact component={User} />
                     <Route path="/about" exact component={About} />
                     <Route path="/about/:id" component={About} />
-                    <Route path="*" exact component={Home} />
+                    {/* <Route path="*" exact component={Home} /> */}
+                    <Route path="*" exact component={NotFound} />
                 </Switch>
                 <Footer/>
             </Router>
