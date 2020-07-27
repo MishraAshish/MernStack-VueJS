@@ -1,9 +1,37 @@
 const express = require("express")
 const routes = express.Router({caseSensitive:true}),
 studentModel = require("./DataModel/StudentModel"),
-UserModel = require("./DataModel/UserModel");
+UserModel = require("./DataModel/UserModel"),
+ProductModel = require("./DataModel/ProductModel");
+
+//product - api's
+routes.post("/api/saveProduct",(req, res)=>{
+    
+    let productObj = new ProductModel(req.body);
+
+    productObj.save((err, data, next)=>{        
+        if (err) {
+            res.send("Error Occurred"+ err);
+        }      
+        res.json(data);
+    });
+});
+
+routes.get("/api/getProducts",(req, res)=>{
+    ProductModel.find((err, data, next) =>{
+        console.log("Data :", err);
+
+        err ? 
+        res.send({"erro": err}) 
+        :
+        res.send(
+            data
+        )
+    })
+});
 
 
+//user creation with sign in and sign up functionality
 routes.post("/api/signInUpUser",(req, res)=>{ //first post call to save the user
     console.log(req.body); // is passed in ajax call of signInUpUser from react LoginUser click action
 
