@@ -426,11 +426,11 @@ optgroup {
   text-decoration: none;
   text-decoration-color: whitesmoke;
   color: #fff;
-  background-color: #ff851b;
+  background-color: #1bf7ff;
 }
 .productDetails{
-    background-color: #ff851b;
-    color: blue;
+    background-color: #fff01b;
+    color: rgb(96, 25, 110);
     text-decoration: none;
   }
 /* Tables
