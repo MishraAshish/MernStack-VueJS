@@ -8,6 +8,7 @@ import NotFound from "./CommonComponents/NotFoundComponent";
 import {About} from "./CommonComponents/AboutComponent";
 import User from "./ApplicationComponents/Container/User/UserContainer";
 import Product from "./ApplicationComponents/Container/Product/ProductContainer";
+import ProductDetails from "./ApplicationComponents/Container/Product/DisplayProductContainer";
 
 
 //export default class App extends Component{
@@ -26,6 +27,7 @@ export default class App extends React.Component{
                     <Route path="/home" exact component={Home} />
                     <Route path="/user" exact component={User} />
                     <Route path="/product" exact component={Product} />
+                    <Route path="/productdetail" exact component={ProductDetails} />
                     <Route path="/about" exact component={About} />
                     <Route path="/about/:id" component={About} />
                     <Route path="/" exact component={Home} />

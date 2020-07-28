@@ -5,8 +5,10 @@ import thunk from 'redux-thunk';//make aync call to api
 import user from "./App/State/UserReducer";
 import product from "./App/State/ProductReducer";
 
-let myLogger = () => (next) => (action) => {    //a custom middleware to log store interaction
+//a custom middleware to log store interaction
+let myLogger = () => (next) => (action) => {
     console.log("Logged Action : Store File ", action); //currying in javasript where we pass function as input and recieve function as output
+    
     next(action);
 };
 
@@ -19,3 +21,5 @@ export default createStore(
     {},
     applyMiddleware(myLogger, thunk, promise)// adding middlewares that we are going to use in our applicatino
 )
+
+// A(destination) "B" "C"-> Destination

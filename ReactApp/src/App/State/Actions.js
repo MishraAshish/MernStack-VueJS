@@ -8,7 +8,7 @@ export const addUserToStore = (user) => ({
 //ajax: asynchronous javascript and xml
 export const signInUpUser = (userObject) => {
     console.log('entering signin signup user');
-    //debugger;
+
     // thunk, returns function as an action
     return function(dispatch, getState) {
         // here we go with ajax call : to save data to the server or fetch is from the server
@@ -41,10 +41,8 @@ export const signInUpUser = (userObject) => {
 }
 
 //Product Action and Server Call
-
 export const saveProduct = (product)=>{
     console.log("Product ", product);
-
     return function (dispatch) {
         //dispatch(loading(true));
 

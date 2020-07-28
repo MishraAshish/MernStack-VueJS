@@ -18,6 +18,7 @@ let mapStateToProps = (state) =>{
 let mapDispatchToProps = (dispatch)=>{
     return {
         saveProduct:(product)=>{
+            //saveProduct(product)
             dispatch(saveProduct(product))
         }
     }

@@ -1,6 +1,7 @@
 "use-strict";
 
 import React from "react";
+import DisplayProducts from "../../Container/Product/DisplayProductContainer";
 
 export default class Product extends React.Component {
     constructor(props, context){
@@ -122,12 +123,7 @@ export default class Product extends React.Component {
                 </div>
                 
                 <br/>
-                {this.state.products.length >= 1 ?
-                    this.state.products.map((product)=>{
-                        return <b>{product.name +" "+ product.price}</b>
-                    })
-                :<b>No Product To Display</b>
-                }
+                <DisplayProducts/>
             </section>
         )
     }
