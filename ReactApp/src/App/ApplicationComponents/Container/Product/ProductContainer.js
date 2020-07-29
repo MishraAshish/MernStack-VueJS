@@ -10,8 +10,7 @@ import {saveProduct} from "../../../State/Actions";
 
 let mapStateToProps = (state) =>{
     return {
-        defaultProd:state.product.defaultProduct,
-        products : state.product.products
+        defaultProd:state.product.defaultProduct
     }
 }
 

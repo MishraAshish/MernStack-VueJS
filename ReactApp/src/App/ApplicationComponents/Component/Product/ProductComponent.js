@@ -13,8 +13,7 @@ export default class Product extends React.Component {
             camera : props.defaultProd.camera,
             ram : props.defaultProd.ram,
             display : props.defaultProd.display,
-            color : props.defaultProd.color,
-            products: props.products
+            color : props.defaultProd.color
         }
     }
 
@@ -60,8 +59,7 @@ export default class Product extends React.Component {
                 camera : nextProps.defaultProd.camera,
                 ram : nextProps.defaultProd.ram,
                 display : nextProps.defaultProd.display,
-                color : nextProps.defaultProd.color,
-                products: nextProps.products
+                color : nextProps.defaultProd.color
             })
         //}
     }
