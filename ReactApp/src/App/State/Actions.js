@@ -88,3 +88,14 @@ export const fetchProducts = () => ({
             })
         }       
 });
+
+//cart : add, update, delete
+
+export const addItemToCart = (item)=>({
+    type: ActionTypes.ADD_ITEM,
+    payload: {item} //{item:item}
+})
+
+export const emptyTheCart = () => ({
+    type: ActionTypes.EMPTY_CART
+});
