@@ -150,11 +150,14 @@ export const getUserCart = (userid) => {
         .then (usercartresponse => {
             console.log("response - get user cart ", usercartresponse);
             
+            dispatch(emptyTheCart());
+            
             for (const item of usercartresponse.cart) {
                 console.log("item in for of", item);
                 let action = addItemToCart(item);
                 dispatch(action);    
-            }           
+            }                
+                       
         })
         .catch((err)=>{
             console.log("Error While Login", err)

@@ -9,7 +9,11 @@ export default class CartItemComponent extends Component{
         }
     }
 
-    
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            qty: nextProps.item.qty
+        });
+    }
 
     //es next
     onChangeQuantity = (e) => {
