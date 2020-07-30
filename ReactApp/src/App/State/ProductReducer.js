@@ -16,7 +16,6 @@ const INITIAL_STATE = {
 export default function ProductReducer(state=INITIAL_STATE,action)
 {
     console.log("Product Reducer :",state);
-
     switch (action.type) {
 
         case ActionTypes.FETCH_PRODUCTS_FULFILLED:            

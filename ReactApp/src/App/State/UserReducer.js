@@ -17,9 +17,9 @@ const INITIAL_STATE ={
 
 //whenever called reducer will always return a state
 export default function userReducer(state=INITIAL_STATE, action) {
-
+    console.log("User Reducer :",state);
     switch (action.type) {
-
+        
         case ActionTypes.AddUserToStore:
             console.log("User PayLoad", action.payload.user);
             //...state = {user:user, loading:false}

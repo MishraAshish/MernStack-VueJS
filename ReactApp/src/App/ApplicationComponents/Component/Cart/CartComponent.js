@@ -1,6 +1,6 @@
 import React from "react";
-// import CartListComponent from "../../Container/Cart/CartListContainer";
-// import CartSummaryComponent from "../../Container/Cart/CartSummaryContainer";
+import CartListComponent from "../../Container/Cart/CartListContainer";
+import CartSummaryComponent from "../../Container/Cart/CartSummaryContainer";
 
 //as there are no dynamic changes required in this parent so keeping it as functional component
 export default function CartComponent(props){    
@@ -17,14 +17,13 @@ export default function CartComponent(props){
                 Empty
             </button>
 
-            {/*<CartListComponent/>            
+            <CartListComponent/>            
             <CartSummaryComponent/>
-             
-                <button onClick={() => props.saveItemsForCheckout(props.cart, props.user._id)} >
-                    Save For Checkout
-                </button> 
+            
+            <button onClick={() => props.saveItemsForCheckout(props.cart, props.user._id)} >
+                Save For Checkout
+            </button> 
                
-            } */}
         </div>
     )
 }
