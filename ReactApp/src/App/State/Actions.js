@@ -117,22 +117,23 @@ export const updateItem = (id, qty) => ({
 
 export const saveItemsForCheckout = (cart, userid) => {
     console.log("Items To Be Saved", cart); 
-
-    window.fetch("http://localhost:9090/api/saveUserCart",{
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({userid:userid, cart:cart})})
-    .then (response => response.json())
-    .then (usercartresponse => {
-        console.log("response ", usercartresponse);
-        //dispatch(loading(false));
-    })
-    .catch((err)=>{
-        console.log("Error While Saving Cart", err);
-    }) 
+    return function(dispatch) {
+        window.fetch("http://localhost:9090/api/saveUserCart",{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({userid:userid, cart:cart})})
+        .then (response => response.json())
+        .then (usercartresponse => {
+            console.log("response ", usercartresponse);
+            //dispatch(loading(false));
+        })
+        .catch((err)=>{
+            console.log("Error While Saving Cart", err);
+        }) 
+    }
 }
 
 export const getUserCart = (userid) => {
