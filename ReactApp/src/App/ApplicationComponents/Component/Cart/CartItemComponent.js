@@ -35,15 +35,21 @@ export default class CartItemComponent extends Component{
                 <td>{item.price}</td>
                 
                 <td>
-                    <input value={this.state.qty} 
-                        type="number"
-                        onChange={this.onChangeQuantity}                        
-                    />                
+                    {this.props.donotMakeEditable ?
+                        <td>{this.state.qty}</td> 
+                        :
+                        <input value={this.state.qty} 
+                            type="number"
+                            onChange={this.onChangeQuantity}                        
+                        />                
+                    }
                 </td> 
                 
                 <td> {item.price * item.qty} </td>
-                
                 <td>
+                    {this.props.donotMakeEditable ?
+                    " "
+                    :
                     <React.Fragment>
                         <button onClick={() => this.props.actions.updateItem(item.id, this.state.qty)}>
                             Update
@@ -52,6 +58,7 @@ export default class CartItemComponent extends Component{
                             Remove
                         </button>
                     </React.Fragment>
+                }
                 </td>
             </tr>
         )

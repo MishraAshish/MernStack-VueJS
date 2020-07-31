@@ -19,7 +19,7 @@ export default function CartListComponent(props) {
                             <th>Price</th>
                             <th>Qty</th>
                             <th>Total</th>
-                            <th>Remove/Edit</th>
+                            {props.donotMakeEditable ? "" : <th>Remove/Edit</th>}
                         </tr>
                     </thead>
                     <tbody>
@@ -27,6 +27,7 @@ export default function CartListComponent(props) {
                         items.map (item => (
                             <CartItemComponent item={item}
                                         key={item.id}
+                                        donotMakeEditable = {props.donotMakeEditable}
                             />
                         ))
                     }

@@ -23,7 +23,9 @@ export default function CartComponent(props){
             <button onClick={() => props.saveItemsForCheckout(props.cart, props.user._id)} >
                 Save For Checkout
             </button> 
-               
+            <button onClick={() => props.history.push("/checkout")} >
+                Go To Checkout
+            </button>
         </div>
     )
 }
