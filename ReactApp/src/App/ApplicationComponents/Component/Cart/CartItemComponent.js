@@ -36,7 +36,7 @@ export default class CartItemComponent extends Component{
                 
                 <td>
                     {this.props.donotMakeEditable ?
-                        <td>{this.state.qty}</td> 
+                        this.state.qty
                         :
                         <input value={this.state.qty} 
                             type="number"

@@ -19,7 +19,7 @@ export default function CartListComponent(props) {
                             <th>Price</th>
                             <th>Qty</th>
                             <th>Total</th>
-                            {props.donotMakeEditable ? "" : <th>Remove/Edit</th>}
+                            {props.donotMakeEditable ? null : <th>Remove/Edit</th>}
                         </tr>
                     </thead>
                     <tbody>

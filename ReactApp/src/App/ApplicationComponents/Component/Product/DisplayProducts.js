@@ -21,7 +21,7 @@ export default class DisplayProductsComponent extends React.Component{
                 {
                     products.length >= 1 ?
                     products.map((product)=>{
-                        return <DisplayProductDetailsComponent product={product}/>;
+                        return <DisplayProductDetailsComponent product={product} key={product._id}/>;
                     })
                     :
                     <p>No Products to display</p>    

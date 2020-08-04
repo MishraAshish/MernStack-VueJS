@@ -1,5 +1,5 @@
 import React from 'react';  
-export function About (props){  
+export default function About (props){  
     let param = props.match.params["id"]; //reading the param in path /about/:id
     //console.log(param);
     return (

@@ -2,15 +2,71 @@ import React, {Component, PureComponent} from "react";
 import "../App.css";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Footer from "./CommonComponents/FooterComponent";
-import Home from "./CommonComponents/HomeComponent";
-import Header from "./CommonComponents/HeaderComponent";
-import NotFound from "./CommonComponents/NotFoundComponent";
-import {About} from "./CommonComponents/AboutComponent";
-import User from "./ApplicationComponents/Container/User/UserContainer";
-import Product from "./ApplicationComponents/Container/Product/ProductContainer";
-import ProductDetails from "./ApplicationComponents/Container/Product/DisplayProductContainer";
-import Cart from "./ApplicationComponents/Container/Cart/CartContainer";
-import Checkout from "./ApplicationComponents/Container/Checkout/CheckoutContainer";
+//import Home from "./CommonComponents/HomeComponent";
+//import Header from "./CommonComponents/HeaderComponent";
+//import NotFound from "./CommonComponents/NotFoundComponent";
+//import {About} from "./CommonComponents/AboutComponent";
+//import User from "./ApplicationComponents/Container/User/UserContainer";
+//import Product from "./ApplicationComponents/Container/Product/ProductContainer";
+//import ProductDetails from "./ApplicationComponents/Container/Product/DisplayProductContainer";
+//import Cart from "./ApplicationComponents/Container/Cart/CartContainer";
+//import Checkout from "./ApplicationComponents/Container/Checkout/CheckoutContainer";
+
+import Loadable from "react-loadable"; //allows lazy loading
+// functional component, used as placeholder
+//when lazy loaded modules delayed
+function Loading() {
+    return (
+        <div>
+            Loading Project...
+        </div>
+    )
+}
+
+const Home = Loadable({
+    loader: () => import('./CommonComponents/HomeComponent'),
+    loading: Loading,
+});
+
+const Header = Loadable({
+    loader: () => import('./CommonComponents/HeaderComponent'),
+    loading: Loading,
+});
+
+const NotFound = Loadable({
+    loader: () => import('./CommonComponents/NotFoundComponent'),
+    loading: Loading,
+});
+
+const About = Loadable({
+    loader: () => import('./CommonComponents/AboutComponent'),
+    loading: Loading,
+});
+
+const User = Loadable({
+    loader: () => import('./ApplicationComponents/Container/User/UserContainer'),
+    loading: Loading,
+});
+
+const Product = Loadable({
+    loader: () => import('./ApplicationComponents/Container/Product/ProductContainer'),
+    loading: Loading,
+});
+
+const ProductDetails = Loadable({
+    loader: () => import('./ApplicationComponents/Container/Product/DisplayProductContainer'),
+    loading: Loading,
+});
+
+const Cart = Loadable({
+    loader: () => import('./ApplicationComponents/Container/Cart/CartContainer'),
+    loading: Loading,
+});
+
+const Checkout = Loadable({
+    loader: () => import('./ApplicationComponents/Container/Checkout/CheckoutContainer'),
+    loading: Loading,
+});
 
 //export default class App extends Component{
 export default class App extends React.Component{     
