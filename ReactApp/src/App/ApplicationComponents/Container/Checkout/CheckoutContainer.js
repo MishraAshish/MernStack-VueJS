@@ -4,7 +4,8 @@ import CheckoutComponent from "../../Component/Checkout/CheckoutComponent";
 
 let mapStateToProps = (state) =>{
     return{
-        user: state.user.user
+        user: state.user.user,
+        coupon: state.coupon.coupon
     }
 }
 

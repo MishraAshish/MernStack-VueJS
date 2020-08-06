@@ -68,6 +68,11 @@ const Checkout = Loadable({
     loading: Loading,
 });
 
+const Coupon = Loadable({
+    loader: () => import('./ApplicationComponents/Container/Coupon/CouponContainer'),
+    loading: Loading,
+});
+
 //export default class App extends Component{
 export default class App extends React.Component{     
 
@@ -89,6 +94,7 @@ export default class App extends React.Component{
                     <Route path="/about/:id" component={About} />
                     <Route path="/cart" component={Cart} />
                     <Route path="/checkout" component={Checkout} />
+                    <Route path="/coupon" component={Coupon} />
                     <Route path="/" exact component={Home} />
                     <Route path="*" exact component={NotFound} />
                 </Switch>
