@@ -18,11 +18,11 @@ let ReactHook = (props)=>{
     let dispatchUserToReducer = ()=>{
         alert("This user is going to dispatch : "+ JSON.stringify(userUpdated));
         
-        //dispatchUser(addUserToStore(user))
+        dispatchUser(addUserToStore(userUpdated))
 
-        useEffect(
-            dispatchUser(addUserToStore(userUpdated))
-        );        
+        // useEffect(
+        //     dispatchUser(addUserToStore(userUpdated))
+        // );        
     }
 
     return(
