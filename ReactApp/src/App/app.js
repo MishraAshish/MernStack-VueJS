@@ -2,6 +2,7 @@ import React, {Component, PureComponent} from "react";
 import "../App.css";
 import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Footer from "./CommonComponents/FooterComponent";
+import ReactHook from "./CommonComponents/ReactHoookComponent";
 //import Home from "./CommonComponents/HomeComponent";
 //import Header from "./CommonComponents/HeaderComponent";
 //import NotFound from "./CommonComponents/NotFoundComponent";
@@ -95,6 +96,7 @@ export default class App extends React.Component{
                     <Route path="/cart" component={Cart} />
                     <Route path="/checkout" component={Checkout} />
                     <Route path="/coupon" component={Coupon} />
+                    <Route path="/hook" component={ReactHook} />
                     <Route path="/" exact component={Home} />
                     <Route path="*" exact component={NotFound} />
                 </Switch>

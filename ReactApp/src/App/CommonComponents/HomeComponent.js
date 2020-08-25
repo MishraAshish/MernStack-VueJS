@@ -116,6 +116,8 @@ export default class Home extends Component{
                     </ul>
 
                     <button onClick={()=> this.props.history.push("/about/2500")}>GoTo About Page</button>
+                    <br/>
+                    <button onClick={()=> this.props.history.push("/hook")}>GoTo React Hooks</button>
 
                     {/* <p><b>{this.state.msg}</b></p>
                     <button onClick={this.changeMessage} >Click Me</button>
