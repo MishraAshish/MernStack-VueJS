@@ -6,7 +6,7 @@ SRC_DIR = path.resolve(__dirname,"src");
 
 webpackConfig = {
     //entry
-    entry: SRC_DIR+"/app.js",
+    entry: SRC_DIR+"/index.js",
 
     //out put
     output:{
